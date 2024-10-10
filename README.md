@@ -2,9 +2,7 @@
 # Diseño de Software
 
 ## Integrantes:
-## Felipe Fesser
-## Jorge Romero
-## Manuel Vergara
+## Felipe Fesser - Jorge Romero - Manuel Vergara
 
 Proyecto: **Clone Wars Adventures Emulator Website**
 

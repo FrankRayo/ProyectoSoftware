@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-//Componente principal de la página Home
+// Componente principal de la página Home
 export default function Home() {
   return (
     <div className="container mx-auto px-4 text-center">

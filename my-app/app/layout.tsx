@@ -27,7 +27,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="container mx-auto px-4 text-center">
+          <header className="py-4">
+            <h1 className="text-4xl font-bold">Este es un texto de testeo para el Layout</h1>
+          </header>
+          {children}
+          <footer className="mt-8 text-sm text-gray-500 dark:text-gray-400">
+            <p>
+              Built with <a href="https://nextjs.org" className="underline">Next.js</a> and <a href="https://tailwindcss.com" className="underline">Tailwind CSS</a>.
+            </p>
+          </footer>
+        </div>
       </body>
     </html>
   );

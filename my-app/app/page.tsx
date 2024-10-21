@@ -1,10 +1,11 @@
 import Image from 'next/image';
 
+// Componente principal de la página Home
 export default function Home() {
   return (
     <div className="container mx-auto px-4 text-center">
-      <h1 className="text-4xl font-bold my-8">CWAEmu test Website</h1>
-      <p className="mb-8">This is a sample website built with Next.js and Tailwind CSS.</p>
+      <h1 className="text-4xl font-bold my-8">Clone Wars Adventures Emulator</h1>
+      <p className="mb-8">This is a sample website built with Next.js and Tailwind CSS for CWAEmu.</p>
       
       <ol className="list-decimal list-inside mb-8">
         <li>Open the file 

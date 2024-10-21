@@ -1,7 +1,6 @@
 "use client"; // Add this directive at the top
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import './globals.css'; // Assuming you have a CSS file for styles
 
@@ -46,35 +45,41 @@ const Home = () => {
 
   return (
     <div className="container mx-auto px-4 text-center">
-      <h1 className="text-4xl font-bold my-8">CWAEmu test website</h1>
-      <p className="mb-8">This is a sample website built with Next.js and Tailwind CSS for CWAEmu.</p>
-      
-      <ol className="list-decimal list-inside mb-8">
-        <li>Open the file 
-          <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-            app/page.tsx
-          </code>
-          .
-        </li>
-        <li>Save and see your changes instantly.</li>
-      </ol>
-
-      <div className="rotator">
-        <div className="sliderBackground">
-          <div className="slider" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-            {files.map((file, index) => (
-              <div className="slide" key={index}>
-                <img src={file} alt={`Slide ${index + 1}`} />
+      <header className="py-4">
+        <h1 className="text-4xl font-bold my-8">CWAEmu test website</h1>
+        <p className="mb-8">This is a sample website built with Next.js and Tailwind CSS for CWAEmu.</p>
+        
+        <ol className="list-decimal list-inside mb-8">
+          <li>Open the file 
+            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
+              app/page.tsx
+            </code>
+            .
+          </li>
+          <li>Save and see your changes instantly.</li>
+        </ol>
+      </header>
+      <div className="slider-background-container">
+        <div className="background-bar"></div>
+        <div className="slider-content">
+          <div className="rotator">
+            <div className="sliderBackground">
+              <div className="slider" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+                {files.map((file, index) => (
+                  <div className="slide" key={index}>
+                    <img src={file} alt={`Slide ${index + 1}`} />
+                  </div>
+                ))}
               </div>
-            ))}
+              <a className="prev" onClick={prevSlide}>❮</a>
+              <a className="next" onClick={nextSlide}>❯</a>
+            </div>
           </div>
-          <a className="prev" onClick={prevSlide}>❮</a>
-          <a className="next" onClick={nextSlide}>❯</a>
         </div>
       </div>
 
-      <div className="second-row mt-8"> {/* Added margin-top class */}
-        <div className="newsbox"> 
+      <div className="second-row mt-8">
+        <div className="newsbox">
           <div className="header">
             <div>LATEST NEWS</div>
           </div>
@@ -85,7 +90,7 @@ const Home = () => {
                 <div className="news">{post.content}</div>
                 <div className="readpost">
                   <Link href={`/news/article/${post.title}`} className="view-link">
-                    VIEW
+                    VIEW 
                   </Link>
                 </div>
               </div>

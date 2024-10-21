@@ -38,6 +38,74 @@ body {
   margin: 0 auto; /* Center the container */
 }
 
+/* Dropdown button styling */
+.dropdown-button {
+  background-color: #044f9e84;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-button:hover {
+  background-color: #00a8a083;
+}
+
+/* Dropdown content styling */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 115, 255, 0.795);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  min-width: 160px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  color: rgb(255, 255, 255);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show dropdown content on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Background bar styling */
+.slider-background-container {
+  position: relative; /* Relative positioning for the container */
+  padding: 2rem; /* Add padding to ensure the content is not too close to the edges */
+}
+
+.background-bar {
+  position: absolute; /* Absolute positioning for the background image */
+  top: -1rem; /* Adjust positioning to make the background larger */
+  left: -1rem; /* Adjust positioning to make the background larger */
+  right: -1rem; /* Adjust positioning to make the background larger */
+  bottom: -1rem; /* Adjust positioning to make the background larger */
+  background-image: url('/assets/homepage/RotatorFrame2.png'); /* Path to your image */
+  background-size: contain; /* Ensure the image uses its full width */
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1; /* Place the background behind the text */
+}
+
+.slider-content {
+  position: relative; /* Ensure the content is above the background */
+  z-index: 1;
+  padding: 1rem; /* Add padding to ensure the text is not too close to the edges */
+}
+
 /* Rotator (slider) styling */
 .rotator {
   position: relative; /* Position relative for absolute positioning of children */

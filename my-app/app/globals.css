@@ -45,17 +45,18 @@ body {
 
 .slider {
   display: flex;
-  transition: transform 5s ease-in-out;
+  transition: transform 2s ease-in-out;
 }
 
 .slide {
   min-width: 100%;
-  transition: opacity 5s ease-in-out;
+  transition: opacity 2s ease-in-out;
 }
 
 .slide img {
   width: 100%;
-  height: auto;
+  height: 530px; /* Set the height to 530 pixels */
+  object-fit: cover; /* Ensure the image covers the entire area */
 }
 
 .prev, .next {
@@ -64,7 +65,7 @@ body {
   transform: translateY(-50%);
   cursor: pointer;
   font-size: 2rem;
-  color: white;
+  color: #00d2c4;
   user-select: none;
 }
 

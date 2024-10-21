@@ -73,7 +73,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="second-row">
+      <div className="second-row mt-8"> {/* Added margin-top class */}
         <div className="newsbox">
           <div className="header">
             <div>LATEST NEWS</div>

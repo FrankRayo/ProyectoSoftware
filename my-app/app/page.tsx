@@ -74,7 +74,7 @@ const Home = () => {
       </div>
 
       <div className="second-row mt-8"> {/* Added margin-top class */}
-        <div className="newsbox">
+        <div className="newsbox"> 
           <div className="header">
             <div>LATEST NEWS</div>
           </div>
@@ -85,7 +85,7 @@ const Home = () => {
                 <div className="news">{post.content}</div>
                 <div className="readpost">
                   <Link href={`/news/article/${post.title}`} className="view-link">
-                    VIEW >>
+                    VIEW
                   </Link>
                 </div>
               </div>

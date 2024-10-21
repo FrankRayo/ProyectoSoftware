@@ -27,3 +27,60 @@ body {
     text-wrap: balance;
   }
 }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rotator {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.sliderBackground {
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  transition: transform 5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  transition: opacity 5s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 2rem;
+  color: white;
+  user-select: none;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.view-link {
+  color: yellow; /* Change the color to yellow */
+  text-decoration: none; /* Remove underline */
+}
+
+.view-link:hover {
+  text-decoration: underline; /* Add underline on hover */
+}

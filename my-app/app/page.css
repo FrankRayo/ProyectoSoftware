@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Slider content styling */
+.slider-content {
+  position: relative; /* Relative positioning for the slider */
+  width: 100%; /* Full width */
+  height: 530px; /* Set the height of the slider */
+  margin: 0 auto; /* Center the slider */
+  overflow: hidden; /* Hide overflow content */
+}
+
+/* Rotator (slider) styling */
+.rotator {
+  position: relative; /* Position relative for absolute positioning of children */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Hide overflow content */
+}
+
+/* Slider styling */
+.slider {
+  display: flex; /* Flexbox layout for slides */
+  transition: transform 2s ease-in-out; /* Smooth transition for slide movement */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  opacity: 1; /* Initial opacity */
+}
+
+/* Slide styling */
+.slide {
+  min-width: 100%; /* Each slide takes full width */
+  height: 100%; /* Full height */
+  transition: opacity 2s ease-in-out; /* Smooth transition for opacity changes */
+}
+
+/* Image styling within slides */
+.slide img {
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  object-fit: cover; /* Ensure the image covers the entire area */
+}
+
+/* Navigation buttons styling */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 2rem;
+  color: #00d2c4; /* Color of the navigation buttons */
+  user-select: none;
+}
+
+.prev {
+  left: 10px; /* Position the previous button */
+}
+
+.next {
+  right: 10px; /* Position the next button */
+}

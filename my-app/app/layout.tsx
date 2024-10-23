@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Link from 'next/link';
-import "./globals.css";
+import "./layout.css"; // Import layout-specific CSS
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,40 +29,37 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="container mx-auto px-4 text-center">
-          <header className="py-4 background-bar-container">
-            <div className="background-bar"></div>
-            <div className="header-content">
-              <h1 className="text-4xl font-bold">Este es un texto de testeo para el Layout</h1>
-              <div className="dropdown-container flex justify-center space-x-4 mt-4">
-                <div className="dropdown">
-                  <button className="dropdown-button">THE GAME</button>
-                  <div className="dropdown-content">
-                    <Link href="/option1">ABOUT</Link>
-                    <Link href="/option2">FAQ</Link>
-                  </div>
+          <header className="py-4">
+            <h1 className="text-4xl font-bold my-8">Este es un texto de testeo para el Layout</h1>
+            <div className="dropdown-container flex justify-center space-x-4 mt-4">
+              <div className="dropdown">
+                <button className="dropdown-button">THE GAME</button>
+                <div className="dropdown-content">
+                  <Link href="/option1">ABOUT</Link>
+                  <Link href="/option2">FAQ</Link>
                 </div>
-                <div className="dropdown">
-                  <button className="dropdown-button">SOCIAL MEDIA</button>
-                  <div className="dropdown-content">
-                    <Link href="/option1">YOUTUBE</Link>
-                    <Link href="/option2">DISCORD</Link>
-                    <Link href="/option3">INSTAGRAM</Link>
-                    <Link href="/option3">X</Link>
-                  </div>
+              </div>
+              <div className="dropdown">
+                <button className="dropdown-button">SOCIAL MEDIA</button>
+                <div className="dropdown-content">
+                  <Link href="/option1">YOUTUBE</Link>
+                  <Link href="/option2">DISCORD</Link>
+                  <Link href="/option3">INSTAGRAM</Link>
+                  <Link href="/option3">X</Link>
                 </div>
-                <div className="dropdown">
-                  <button className="dropdown-button">UPDATES</button>
-                  <div className="dropdown-content">
-                    <Link href="/option1">NEWS</Link>
-                    <Link href="/option2">RELEASE NOTES</Link>
-                    <Link href="/option3">ROADMAP</Link>
-                  </div>
+              </div>
+              <div className="dropdown">
+                <button className="dropdown-button">UPDATES</button>
+                <div className="dropdown-content">
+                  <Link href="/option1">NEWS</Link>
+                  <Link href="/option2">RELEASE NOTES</Link>
+                  <Link href="/option3">ROADMAP</Link>
                 </div>
-                <div>
-                  <Link href="/contact">
-                    <button className="dropdown-button">CONTACT US</button>
-                  </Link>
-                </div>
+              </div>
+              <div>
+                <Link href="/contact">
+                  <button className="dropdown-button">CONTACT US</button>
+                </Link>
               </div>
             </div>
           </header>

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import './globals.css'; // Assuming you have a CSS file for styles
+import './page.css'; // Import page-specific CSS
 
 const Home = () => {
   const files = [
@@ -59,22 +59,17 @@ const Home = () => {
           <li>Save and see your changes instantly.</li>
         </ol>
       </header>
-      <div className="slider-background-container">
-        <div className="background-bar"></div>
-        <div className="slider-content">
-          <div className="rotator">
-            <div className="sliderBackground">
-              <div className="slider" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-                {files.map((file, index) => (
-                  <div className="slide" key={index}>
-                    <img src={file} alt={`Slide ${index + 1}`} />
-                  </div>
-                ))}
+      <div className="slider-content">
+        <div className="rotator">
+          <div className="slider" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+            {files.map((file, index) => (
+              <div className="slide" key={index}>
+                <img src={file} alt={`Slide ${index + 1}`} />
               </div>
-              <a className="prev" onClick={prevSlide}>❮</a>
-              <a className="next" onClick={nextSlide}>❯</a>
-            </div>
+            ))}
           </div>
+          <a className="prev" onClick={prevSlide}>❮</a>
+          <a className="next" onClick={nextSlide}>❯</a>
         </div>
       </div>
 
@@ -90,7 +85,7 @@ const Home = () => {
                 <div className="news">{post.content}</div>
                 <div className="readpost">
                   <Link href={`/news/article/${post.title}`} className="view-link">
-                    VIEW 
+                    VIEW
                   </Link>
                 </div>
               </div>

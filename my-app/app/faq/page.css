@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #7d74f3;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.faq-list {
+  list-style: none;
+  padding: 0;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+}
+
+.faq-question {
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.5rem;
+  background-color: #c94cff;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: #cbd5e0;
+}
+
+.faq-answer {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #edf2f7;
+  border-radius: 4px;
+}

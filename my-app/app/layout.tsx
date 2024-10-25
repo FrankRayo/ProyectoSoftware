@@ -35,25 +35,25 @@ export default function RootLayout({
               <div className="dropdown">
                 <button className="dropdown-button">THE GAME</button>
                 <div className="dropdown-content">
-                  <Link href="/option1">ABOUT</Link>
-                  <Link href="/option2">FAQ</Link>
+                  <Link href="/about">ABOUT</Link>
+                  <Link href="/faq">FAQ</Link>
                 </div>
               </div>
               <div className="dropdown">
                 <button className="dropdown-button">SOCIAL MEDIA</button>
                 <div className="dropdown-content">
-                  <Link href="/option1">YOUTUBE</Link>
-                  <Link href="/option2">DISCORD</Link>
-                  <Link href="/option3">INSTAGRAM</Link>
-                  <Link href="/option3">X</Link>
+                  <Link href="/youtube">YOUTUBE</Link>
+                  <Link href="/discord">DISCORD</Link>
+                  <Link href="/insta">INSTAGRAM</Link>
+                  <Link href="/twitter">X</Link>
                 </div>
               </div>
               <div className="dropdown">
                 <button className="dropdown-button">UPDATES</button>
                 <div className="dropdown-content">
-                  <Link href="/option1">NEWS</Link>
-                  <Link href="/option2">RELEASE NOTES</Link>
-                  <Link href="/option3">ROADMAP</Link>
+                  <Link href="/news">NEWS</Link>
+                  <Link href="/release_notes">RELEASE NOTES</Link>
+                  <Link href="/roadmap">ROADMAP</Link>
                 </div>
               </div>
               <div>

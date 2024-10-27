@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import './page.css'; // Import page-specific CSS
 
+// Componente principal de la página Home
 const Home = () => {
   const files = [
     'https://cdn.discordapp.com/attachments/942929527686959185/1270818242918875156/Screen_Shot_2024-08-07_at_2.57.03_PM.jpg?ex=67174cf7&is=6715fb77&hm=40b29520faa56574c106b6115e5deac2c2b3182429b9841418b896ae9033ba6a&',

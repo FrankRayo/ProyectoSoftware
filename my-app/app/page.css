@@ -8,7 +8,7 @@
   width: 1080px; /* Full width */
   height: 530px; /* Set the height of the slider */
   margin: 0 auto; /* Center the slider */
-  overflow: hidden; /* Hide overflow content */
+  overflow: hidden; /* Hide overflow content  */
 }
 
 /* Rotator (slider) styling */

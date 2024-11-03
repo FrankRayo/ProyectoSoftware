@@ -2,44 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Container styling */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Header styling */
+header {
+  position: relative;
+  padding: 1rem;
+}
+
+/* Button styling */
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Language toggle button styling */
+.language-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* Login form styling */
+.login-form {
+  position: absolute;
+  top: 4rem;
+  right: 1rem;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  color: black; /* Change text color to black */
+  background-color: #3d55b7; /* Change background color to purple */
+}
+
 /* Slider content styling */
 .slider-content {
-  position: relative; /* Relative positioning for the slider */
-  width: 1080px; /* Full width */
-  height: 530px; /* Set the height of the slider */
-  margin: 0 auto; /* Center the slider */
-  overflow: hidden; /* Hide overflow content  */
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 /* Rotator (slider) styling */
 .rotator {
-  position: relative; /* Position relative for absolute positioning of children */
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: hidden; /* Hide overflow content */
-}
-
-/* Slider styling */
-.slider {
-  display: flex; /* Flexbox layout for slides */
-  transition: transform 2s ease-in-out; /* Smooth transition for slide movement */
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  opacity: 1; /* Initial opacity */
+  display: flex;
+  transition: transform 2s ease-in-out;
 }
 
 /* Slide styling */
 .slide {
-  min-width: 100%; /* Each slide takes full width */
-  height: 100%; /* Full height */
-  transition: opacity 2s ease-in-out; /* Smooth transition for opacity changes */
+  min-width: 100%;
+  height: 530px;
 }
 
-/* Image styling within slides */
 .slide img {
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  object-fit: cover; /* Ensure the image covers the entire area */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Navigation buttons styling */
@@ -49,14 +92,83 @@
   transform: translateY(-50%);
   cursor: pointer;
   font-size: 2rem;
-  color: #00d2c4; /* Color of the navigation buttons */
+  color: #00d2c4;
   user-select: none;
 }
 
 .prev {
-  left: 10px; /* Position the previous button */
+  left: 10px;
 }
 
 .next {
-  right: 10px; /* Position the next button */
+  right: 10px;
+}
+
+/* Second row styling */
+.second-row {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .second-row {
+    flex-direction: row;
+  }
+}
+
+.newsbox, .purplebox {
+  flex: 1;
+  background-color: #705c25;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.newsbox {
+  margin-right: 0;
+}
+
+@media (min-width: 768px) {
+  .newsbox {
+    margin-right: 1rem;
+  }
+}
+
+.header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.content {
+  font-size: 1rem;
+}
+
+.newsarticle {
+  margin-bottom: 1rem;
+}
+
+.newsarticle .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.newsarticle .news {
+  margin-top: 0.5rem;
+}
+
+.newsarticle .readpost {
+  margin-top: 0.5rem;
+}
+
+.view-link {
+  color: yellow;
+  text-decoration: none;
+}
+
+.view-link:hover {
+  text-decoration: underline;
 }

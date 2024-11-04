@@ -35,8 +35,8 @@ export default function RootLayout({
               <div className="dropdown">
                 <button className="dropdown-button">THE GAME</button>
                 <div className="dropdown-content">
-                  <Link href="/about">ABOUT</Link>
-                  <Link href="/faq">FAQ</Link>
+                  <Link href="/pages/about">ABOUT</Link>
+                  <Link href="/pages/faq">FAQ</Link>
                 </div>
               </div>
               <div className="dropdown">

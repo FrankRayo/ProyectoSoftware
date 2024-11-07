@@ -37,7 +37,7 @@ button:hover {
   position: absolute;
   top: 4rem;
   right: 1rem;
-  background-color: #f8f9fa;
+  background-color: #26309f;
   padding: 1rem;
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -50,7 +50,7 @@ button:hover {
   margin-bottom: 0.5rem;
   border: 1px solid #ced4da;
   border-radius: 4px;
-  color: black; /* Change text color to black */
+  color: rgb(255, 255, 255); /* Change text color to black */
   background-color: #3d55b7; /* Change background color to purple */
 }
 

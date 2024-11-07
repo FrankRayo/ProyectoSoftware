@@ -114,6 +114,9 @@ const Home = () => {
               onChange={(e) => setPassword(e.target.value)}
               className="p-2 border rounded w-full"
             />
+            <Link href="/pages/download">
+              <button className="mt-2 bg-blue-500 text-white px-4 py-2 rounded">Enter</button>
+            </Link>
           </div>
         </div>
       </header>

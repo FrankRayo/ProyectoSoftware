@@ -74,7 +74,7 @@ export default function RootLayout({
             </p>
             <div className="mt-4 flex justify-center space-x-4 mb-8"> {/* Added mb-8 for margin-bottom */}
               <span>|</span>
-              <Link href="/privacy-policy" className="text-blue-500 hover:underline">Privacy Policy</Link>
+              <Link href="/pages/footer/privacy_policy" className="text-blue-500 hover:underline">Privacy Policy</Link>
               <span>|</span>
               <Link href="/terms-of-service" className="text-blue-500 hover:underline">Terms of Service</Link>
               <span>|</span>

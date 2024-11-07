@@ -30,7 +30,11 @@ export default function RootLayout({
       >
         <div className="container mx-auto px-4 text-center">
           <header className="py-4">
-            <h1 className="text-4xl font-bold my-8">Este es un texto de testeo para el Layout</h1>
+            <Link href="/">
+              <button className="text-4xl font-bold my-8 bg-transparent border-none cursor-pointer">
+                CLONE WARS ADVENTURES EMULATOR
+              </button>
+            </Link>
             <div className="dropdown-container">
               <div className="dropdown">
                 <button className="dropdown-button">THE GAME</button>
@@ -56,7 +60,7 @@ export default function RootLayout({
                   <Link href="/roadmap">ROADMAP</Link>
                 </div>
               </div>
-              <div>
+              <div className="dropdown">
                 <Link href="/contact">
                   <button className="dropdown-button">CONTACT US</button>
                 </Link>

@@ -6,7 +6,6 @@ import './page.css'; // Importar CSS específico de la página
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [language, setLanguage] = useState('en'); // Estado para gestionar el idioma actual
   const [username, setUsername] = useState(''); // Estado para el nombre de usuario
   const [password, setPassword] = useState(''); // Estado para la contraseña
 
@@ -46,57 +45,22 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [currentSlide]);
 
-  const toggleLanguage = () => {
-    setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'es' : 'en')); // Alternar entre inglés y español
-  };
-
-  const text = {
-    en: {
-      title: 'CWAEmu test website',
-      description: 'This is a sample website built with Next.js and Tailwind CSS for CWAEmu.',
-      instructions: [
-        'Open the file',
-        'Save and see your changes instantly.',
-      ],
-      latestNews: 'LATEST NEWS',
-      view: 'VIEW',
-      roadmap: 'ROADMAP',
-    },
-    es: {
-      title: 'Sitio de prueba de CWAEmu',
-      description: 'Este es un sitio web de muestra construido con Next.js y Tailwind CSS para CWAEmu.',
-      instructions: [
-        'Abre el archivo',
-        'Guarda y ve tus cambios al instante.',
-      ],
-      latestNews: 'ÚLTIMAS NOTICIAS',
-      view: 'VER',
-      roadmap: 'HOJA DE RUTA',
-    },
-  };
-
   return (
     <div className="container mx-auto px-4 text-center" style={{ paddingTop: '5rem' }}>
       <header className="py-4 relative">
-        <button
-          onClick={toggleLanguage}
-          className="absolute top-0 right-0 mt-4 mr-4 bg-blue-500 text-white px-4 py-2 rounded"
-        >
-          {language === 'en' ? 'Español' : 'English'}
-        </button>
         <div className="flex justify-between items-start">
           <div className="text-left">
-            <h1 className="text-4xl font-bold my-8">{text[language].title}</h1>
-            <p className="mb-8">{text[language].description}</p>
+            <h1 className="text-4xl font-bold my-8">CWAEmu test website</h1>
+            <p className="mb-8">This is a sample website built with Next.js and Tailwind CSS for CWAEmu.</p>
             
             <ol className="list-decimal list-inside mb-8">
-              <li>{text[language].instructions[0]} 
+              <li>Open the file 
                 <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
                   app/page.tsx
                 </code>
                 .
               </li>
-              <li>{text[language].instructions[1]}</li>
+              <li>Save and see your changes instantly.</li>
             </ol>
           </div>
           <div className="login-form bg-gray-100 p-4 rounded shadow-md">
@@ -137,7 +101,7 @@ const Home = () => {
       <div className="second-row mt-8">
         <div className="newsbox">
           <div className="header">
-            <div>{text[language].latestNews}</div>
+            <div>LATEST NEWS</div>
           </div>
           <div className="content">
             {posts.map((post, index) => (
@@ -146,7 +110,7 @@ const Home = () => {
                 <div className="news">{post.content}</div>
                 <div className="readpost">
                   <Link href={`/news/article/${post.title}`} className="view-link">
-                    {text[language].view}
+                    VIEW
                   </Link>
                 </div>
               </div>
@@ -156,7 +120,7 @@ const Home = () => {
 
         <div className="purplebox">
           <div className="header">
-            <div>{text[language].roadmap}</div>
+            <div>ROADMAP</div>
           </div>
           <div className="content"></div>
         </div>

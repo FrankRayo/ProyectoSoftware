@@ -11,9 +11,9 @@ const Home = () => {
   const [password, setPassword] = useState(''); // Estado para la contraseña
 
   const files = [
-    'https://cdn.discordapp.com/attachments/942929527686959185/1270818242918875156/Screen_Shot_2024-08-07_at_2.57.03_PM.jpg?ex=67174cf7&is=6715fb77&hm=40b29520faa56574c106b6115e5deac2c2b3182429b9841418b896ae9033ba6a&',
-    'https://cdn.discordapp.com/attachments/942929527686959185/1274928773371920384/image.png?ex=671717f2&is=6715c672&hm=a8e62019cc83c0bf95c5494efb2a442f5ebff6cfa5e36b3558f8d44a06e8b738&',
-    'https://cdn.discordapp.com/attachments/942929527686959185/1294389133770494044/Screenshot_1844.png?ex=67175b92&is=67160a12&hm=0e96920cddff0f5f7d91feed0d94c362fcaac039652ff509eb2e1e4167aee7a6&',
+    '/assets/homepage/Slider 1.jpg',
+    '/assets/homepage/Slider 2.png',
+    '/assets/homepage/Slider 3.png',
   ];
 
   const posts = [
@@ -76,53 +76,59 @@ const Home = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 text-center">
+    <div className="container mx-auto px-4 text-center" style={{ paddingTop: '5rem' }}>
       <header className="py-4 relative">
         <button
           onClick={toggleLanguage}
-          className="language-toggle bg-blue-500 text-white px-4 py-2 rounded"
+          className="absolute top-0 right-0 mt-4 mr-4 bg-blue-500 text-white px-4 py-2 rounded"
         >
           {language === 'en' ? 'Español' : 'English'}
         </button>
-        <div className="login-form">
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className="mb-2 p-2 border rounded w-full"
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="p-2 border rounded w-full"
-          />
+        <div className="flex justify-between items-start">
+          <div className="text-left">
+            <h1 className="text-4xl font-bold my-8">{text[language].title}</h1>
+            <p className="mb-8">{text[language].description}</p>
+            
+            <ol className="list-decimal list-inside mb-8">
+              <li>{text[language].instructions[0]} 
+                <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
+                  app/page.tsx
+                </code>
+                .
+              </li>
+              <li>{text[language].instructions[1]}</li>
+            </ol>
+          </div>
+          <div className="login-form bg-gray-100 p-4 rounded shadow-md">
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="mb-2 p-2 border rounded w-full"
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="p-2 border rounded w-full"
+            />
+          </div>
         </div>
-        <h1 className="text-4xl font-bold my-8">{text[language].title}</h1>
-        <p className="mb-8">{text[language].description}</p>
-        
-        <ol className="list-decimal list-inside mb-8">
-          <li>{text[language].instructions[0]} 
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>{text[language].instructions[1]}</li>
-        </ol>
       </header>
-      <div className="slider-content">
-        <div className="rotator" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-          {files.map((file, index) => (
-            <div className="slide" key={index}>
-              <img src={file} alt={`Slide ${index + 1}`} />
-            </div>
-          ))}
+      <div className="inner-slider" style={{ backgroundImage: 'url(/assets/homepage/RotatorFrame2.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center', height: '530px' }}>
+        <div className="slider-content" style={{ padding: '10px' }}>
+          <div className="rotator" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+            {files.map((file, index) => (
+              <div className="slide" key={index}>
+                <img src={file} alt={`Slide ${index + 1}`} />
+              </div>
+            ))}
+          </div>
+          <a className="prev" onClick={prevSlide}>❮</a>
+          <a className="next" onClick={nextSlide}>❯</a>
         </div>
-        <a className="prev" onClick={prevSlide}>❮</a>
-        <a className="next" onClick={nextSlide}>❯</a>
       </div>
 
       <div className="second-row mt-8">

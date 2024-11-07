@@ -52,6 +52,7 @@ body:has(.content-below) body::after {
 .container {
   max-width: 1200px; /* Maximum width of the container */
   margin: 0 auto; /* Center the container */
+  padding-top: 1rem; /* Add space between the layout header and the page content */
 }
 
 /* Dropdown container styling */

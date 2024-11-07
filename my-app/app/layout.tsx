@@ -31,7 +31,7 @@ export default function RootLayout({
         <div className="container mx-auto px-4 text-center">
           <header className="py-4">
             <h1 className="text-4xl font-bold my-8">Este es un texto de testeo para el Layout</h1>
-            <div className="dropdown-container flex justify-center space-x-4 mt-4">
+            <div className="dropdown-container">
               <div className="dropdown">
                 <button className="dropdown-button">THE GAME</button>
                 <div className="dropdown-content">

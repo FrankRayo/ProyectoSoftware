@@ -17,6 +17,9 @@ header {
 
 /* Button styling */
 button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
   background-color: #007bff;
   color: white;
   padding: 0.5rem 1rem;
@@ -27,13 +30,6 @@ button {
 
 button:hover {
   background-color: #0056b3;
-}
-
-/* Language toggle button styling */
-.language-toggle {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
 }
 
 /* Login form styling */
@@ -65,6 +61,7 @@ button:hover {
   max-width: 800px;
   margin: 0 auto;
   overflow: hidden;
+  opacity: 100; /* OPCION PARA VERIFICAR EL ROTATORFRAME */
 }
 
 /* Rotator (slider) styling */
@@ -119,10 +116,10 @@ button:hover {
 
 .newsbox, .purplebox {
   flex: 1;
-  background-color: #705c25;
+  background-color: #b6921c;
   padding: 1rem;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(249, 240, 240, 0.1);
   margin-bottom: 1rem;
 }
 

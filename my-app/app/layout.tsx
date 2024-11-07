@@ -46,10 +46,10 @@ export default function RootLayout({
               <div className="dropdown">
                 <button className="dropdown-button">SOCIAL MEDIA</button>
                 <div className="dropdown-content">
-                  <Link href="/youtube">YOUTUBE</Link>
-                  <Link href="/discord">DISCORD</Link>
-                  <Link href="/insta">INSTAGRAM</Link>
-                  <Link href="/twitter">X</Link>
+                  <Link href="https://www.youtube.com/c/CWAEmu">YOUTUBE</Link>
+                  <Link href="https://discord.gg/a3Ugb9dzzv">DISCORD</Link>
+                  <Link href="https://www.instagram.com/cwaemu/">INSTAGRAM</Link>
+                  <Link href="https://x.com/CWAEMU">X</Link>
                 </div>
               </div>
               <div className="dropdown">
@@ -57,7 +57,7 @@ export default function RootLayout({
                 <div className="dropdown-content">
                   <Link href="/news">NEWS</Link>
                   <Link href="/release_notes">RELEASE NOTES</Link>
-                  <Link href="/roadmap">ROADMAP</Link>
+                  <Link href="/pages/roadmap">ROADMAP</Link>
                 </div>
               </div>
               <div className="dropdown">

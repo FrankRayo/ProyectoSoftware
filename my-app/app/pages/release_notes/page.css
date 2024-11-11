@@ -52,14 +52,11 @@ button:hover {
 
 /* Slider content styling */
 .slider-content {
-  position: absolute;
-  top: 50.65%;
-  left: 49.99%;
-  transform: translate(-50%, -50%);
+  position: relative;
   width: 100%;
-  max-width: 1109px;
+  max-width: 800px;
   overflow: hidden;
-  padding: 0; /* Remove padding to avoid showing edges */
+  margin: 2rem auto; /* Add margin for the slider */
 }
 
 /* Rotator (slider) styling */
@@ -71,7 +68,7 @@ button:hover {
 /* Slide styling */
 .slide {
   min-width: 100%;
-  height: 606px;
+  height: 530px;
 }
 
 .slide img {
@@ -151,7 +148,7 @@ button:hover {
 }
 
 .view-link {
-  color: yellow;
+  color: rgb(255, 0, 0);
   text-decoration: none;
 }
 

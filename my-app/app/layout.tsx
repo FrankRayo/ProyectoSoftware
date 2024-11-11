@@ -66,7 +66,7 @@ export default function RootLayout({
                 <button className="dropdown-button">UPDATES</button>
                 <div className="dropdown-content">
                   <Link href="/news">NEWS</Link>
-                  <Link href="/release_notes">RELEASE NOTES</Link>
+                  <Link href="/pages/release_notes">RELEASE NOTES</Link>
                   <Link href="/pages/roadmap">ROADMAP</Link>
                 </div>
               </div>

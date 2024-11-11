@@ -84,8 +84,8 @@ const Home = () => {
           </div>
         </div>
       </header>
-      <div className="inner-slider" style={{ backgroundImage: 'url(/assets/homepage/RotatorFrame2.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center', height: '720px' }}>
-        <div className="slider-content" style={{ padding: '0px' }}>
+      <div className="inner-slider" style={{ backgroundImage: 'url(/assets/homepage/RotatorFrame2.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center', height: '530px' }}>
+        <div className="slider-content" style={{ padding: '10px' }}>
           <div className="rotator" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
             {files.map((file, index) => (
               <div className="slide" key={index}>

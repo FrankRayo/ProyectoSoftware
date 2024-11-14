@@ -53,13 +53,14 @@ button:hover {
 /* Slider content styling */
 .slider-content {
   position: absolute;
-  top: 50.65%;
-  left: 49.99%;
+  top: 50.65%; /* Keep the original top percentage */
+  left: 49.99%; /* Keep the original left percentage */
   transform: translate(-50%, -50%);
   width: 100%;
   max-width: 1109px;
   overflow: hidden;
   padding: 0; /* Remove padding to avoid showing edges */
+  border-radius: 15px; /* Add rounded edges to the slider */
 }
 
 /* Rotator (slider) styling */
@@ -72,31 +73,39 @@ button:hover {
 .slide {
   min-width: 100%;
   height: 606px;
+  border-radius: 15px; /* Add rounded edges to the slides */
 }
 
 .slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 15px; /* Add rounded edges to the images */
 }
 
 /* Navigation buttons styling */
 .prev, .next {
   position: absolute;
-  top: 50%;
+  top: 48%;
   transform: translateY(-50%);
   cursor: pointer;
-  font-size: 2rem;
-  color: #00d2c4;
+  width: 40px; /* Set width for the arrow image */
+  height: 32px; /* Set height for the arrow image */
+  background-image: url('/assets/homepage/Arrow.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   user-select: none;
 }
 
 .prev {
   left: 10px;
+  transform: translateY(-50%) rotate(90deg); /* Rotate the left arrow by 90 degrees */
 }
 
 .next {
   right: 10px;
+  transform: translateY(-50%) rotate(-90deg); /* Rotate the right arrow by -90 degrees */
 }
 
 /* Second row styling */

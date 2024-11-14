@@ -10,9 +10,9 @@ const Home = () => {
   const [password, setPassword] = useState(''); // Estado para la contraseña
 
   const files = [
-    '/assets/homepage/Slider 1.jpg',
-    '/assets/homepage/Slider 2.png',
-    '/assets/homepage/Slider 3.png',
+    '/assets/homepage/Rotator/Slider 1.jpg',
+    '/assets/homepage/Rotator/Slider 2.png',
+    '/assets/homepage/Rotator/Slider 3.png',
   ];
 
   const posts = [
@@ -84,7 +84,7 @@ const Home = () => {
           </div>
         </div>
       </header>
-      <div className="inner-slider" style={{ backgroundImage: 'url(/assets/homepage/RotatorFrame2.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center', height: '720px' }}>
+      <div className="inner-slider" style={{ backgroundImage: 'url(/assets/homepage//Rotator/RotatorFrame2.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center', height: '720px' }}>
         <div className="slider-content" style={{ padding: '0px' }}>
           <div className="rotator" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
             {files.map((file, index) => (
@@ -93,8 +93,8 @@ const Home = () => {
               </div>
             ))}
           </div>
-          <a className="prev" onClick={prevSlide}>❮</a>
-          <a className="next" onClick={nextSlide}>❯</a>
+          <a className="prev" onClick={prevSlide}></a>
+          <a className="next" onClick={nextSlide}></a>
         </div>
       </div>
 

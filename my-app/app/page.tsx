@@ -3,8 +3,13 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import './page.css'; // Importar CSS específico de la página
+import translations from './i18n';
+import { useLanguage } from './LanguageContext';
 
 const Home = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [username, setUsername] = useState(''); // Estado para el nombre de usuario
   const [password, setPassword] = useState(''); // Estado para la contraseña
@@ -50,8 +55,8 @@ const Home = () => {
       <header className="py-4 relative">
         <div className="flex justify-between items-start">
           <div className="text-left">
-            <h1 className="text-4xl font-bold my-8">CWAEmu test website</h1>
-            <p className="mb-8">This is a sample website built with Next.js and Tailwind CSS for CWAEmu.</p>
+            <h1 className="text-4xl font-bold my-8">{t.welcome}</h1>
+            <p className="mb-8">{t.description}</p>
             
             <ol className="list-decimal list-inside mb-8">
               <li>Open the file 
@@ -66,20 +71,20 @@ const Home = () => {
           <div className="login-form bg-gray-100 p-4 rounded shadow-md">
             <input
               type="text"
-              placeholder="Username"
+              placeholder={t.login.username}
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               className="mb-2 p-2 border rounded w-full"
             />
             <input
               type="password"
-              placeholder="Password"
+              placeholder={t.login.password}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="p-2 border rounded w-full"
             />
             <Link href="/pages/download">
-              <button className="mt-2 bg-blue-500 text-white px-4 py-2 rounded">Enter</button>
+              <button className="mt-2 bg-blue-500 text-white px-4 py-2 rounded">{t.login.enter}</button>
             </Link>
           </div>
         </div>
@@ -101,7 +106,7 @@ const Home = () => {
       <div className="second-row mt-8">
         <div className="newsbox">
           <div className="header">
-            <div>LATEST NEWS</div>
+            <div>{t.latestNews}</div>
           </div>
           <div className="content">
             {posts.map((post, index) => (
@@ -110,7 +115,7 @@ const Home = () => {
                 <div className="news">{post.content}</div>
                 <div className="readpost">
                   <Link href={`/news/article/${post.title}`} className="view-link">
-                    VIEW
+                    {t.view}
                   </Link>
                 </div>
               </div>
@@ -120,7 +125,7 @@ const Home = () => {
 
         <div className="purplebox">
           <div className="header">
-            <div>ROADMAP</div>
+            <div>{t.roadmap}</div>
           </div>
           <div className="content"></div>
         </div>

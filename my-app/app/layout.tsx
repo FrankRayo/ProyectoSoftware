@@ -1,10 +1,11 @@
-"use client"; // Añadir esta directiva en la parte superior
+"use client";
 
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Link from 'next/link';
-import { useState } from 'react';
-import "./layout.css"; // Import layout-specific CSS
+import "./layout.css";
+import translations from './i18n';
+import { LanguageProvider, useLanguage } from './LanguageContext';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -16,19 +17,12 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const [language, setLanguage] = useState('en'); // Estado para gestionar el idioma actual
-
-  const toggleLanguage = () => {
-    setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'es' : 'en')); // Alternar entre inglés y español
-  };
+function LayoutContent({ children }: { children: React.ReactNode }) {
+  const { language, toggleLanguage } = useLanguage();
+  const t = translations[language];
 
   return (
-    <html lang="en">
+    <html lang={language}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -47,14 +41,14 @@ export default function RootLayout({
             </Link>
             <div className="dropdown-container">
               <div className="dropdown">
-                <button className="dropdown-button">THE GAME</button>
+                <button className="dropdown-button">{t.theGame}</button>
                 <div className="dropdown-content">
-                  <Link href="/pages/about">ABOUT</Link>
-                  <Link href="/pages/faq">FAQ</Link>
+                  <Link href="/pages/about">{t.about}</Link>
+                  <Link href="/pages/faq">{t.faq}</Link>
                 </div>
               </div>
               <div className="dropdown">
-                <button className="dropdown-button">SOCIAL MEDIA</button>
+                <button className="dropdown-button">{t.socialMedia}</button>
                 <div className="dropdown-content">
                   <Link href="https://www.youtube.com/c/CWAEmu">YOUTUBE</Link>
                   <Link href="https://discord.gg/a3Ugb9dzzv">DISCORD</Link>
@@ -63,16 +57,16 @@ export default function RootLayout({
                 </div>
               </div>
               <div className="dropdown">
-                <button className="dropdown-button">UPDATES</button>
+                <button className="dropdown-button">{t.updates}</button>
                 <div className="dropdown-content">
-                  <Link href="/news">NEWS</Link>
-                  <Link href="/pages/release_notes">RELEASE NOTES</Link>
-                  <Link href="/pages/roadmap">ROADMAP</Link>
+                  <Link href="/news">{t.news}</Link>
+                  <Link href="/pages/release_notes">{t.releaseNotes}</Link>
+                  <Link href="/pages/roadmap">{t.roadmap}</Link>
                 </div>
               </div>
               <div className="dropdown">
                 <Link href="/contact">
-                  <button className="dropdown-button">CONTACT US</button>
+                  <button className="dropdown-button">{t.contactUs}</button>
                 </Link>
               </div>
             </div>
@@ -82,20 +76,32 @@ export default function RootLayout({
             <p>
               Built with <a href="https://nextjs.org" className="underline">Next.js</a> and <a href="https://tailwindcss.com" className="underline">Tailwind CSS</a>.
             </p>
-            <div className="mt-4 flex justify-center space-x-4 mb-8"> {/* Added mb-8 for margin-bottom */}
+            <div className="mt-4 flex justify-center space-x-4 mb-8">
               <span>|</span>
-              <Link href="/privacy-policy" className="text-blue-500 hover:underline">Privacy Policy</Link>
+              <Link href="/privacy-policy" className="text-blue-500 hover:underline">{t.privacyPolicy}</Link>
               <span>|</span>
-              <Link href="/terms-of-service" className="text-blue-500 hover:underline">Terms of Service</Link>
+              <Link href="/terms-of-service" className="text-blue-500 hover:underline">{t.termsOfService}</Link>
               <span>|</span>
-              <Link href="/press" className="text-blue-500 hover:underline">Press</Link>
+              <Link href="/press" className="text-blue-500 hover:underline">{t.press}</Link>
               <span>|</span>
-              <Link href="/join-the-team" className="text-blue-500 hover:underline">Join The Team</Link>
+              <Link href="/join-the-team" className="text-blue-500 hover:underline">{t.joinTheTeam}</Link>
               <span>|</span>
             </div>
           </footer>
         </div>
       </body>
     </html>
+  );
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <LanguageProvider>
+      <LayoutContent>{children}</LayoutContent>
+    </LanguageProvider>
   );
 }

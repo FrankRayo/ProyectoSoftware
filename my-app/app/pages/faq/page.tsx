@@ -2,23 +2,13 @@
 
 import React, { useState } from 'react';
 import './page.css'; // Correct import path for page-specific CSS
-
-const faqs = [
-  {
-    question: 'What is CWAEmu?',
-    answer: 'CWAEmu is a sample website built with Next.js and Tailwind CSS for testing purposes.',
-  },
-  {
-    question: 'How do I use this site?',
-    answer: 'You can navigate through the site using the menu options and explore the different sections.',
-  },
-  {
-    question: 'Who developed this site?',
-    answer: 'This site was developed by a team of developers using modern web technologies.',
-  },
-];
+import translations from '../../i18n';
+import { useLanguage } from '../../LanguageContext';
 
 const FAQ = () => {
+  const { language } = useLanguage();
+  const t = translations[language].faqPage;
+
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
@@ -27,9 +17,9 @@ const FAQ = () => {
 
   return (
     <div className="faq-container">
-      <h1 className="faq-title">Frequently Asked Questions</h1>
+      <h1 className="faq-title">{t.title}</h1>
       <div className="faq-list">
-        {faqs.map((faq, index) => (
+        {t.questions.map((faq, index) => (
           <div key={index} className="faq-item">
             <div className="faq-question" onClick={() => toggleFAQ(index)}>
               {faq.question}

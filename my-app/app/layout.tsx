@@ -40,11 +40,6 @@ export default function RootLayout({
             >
               {language === 'en' ? 'Español' : 'English'}
             </button>
-            <Link href="/">
-              <button className="text-4xl font-bold my-8 bg-transparent border-none cursor-pointer">
-                CLONE WARS ADVENTURES EMULATOR
-              </button>
-            </Link>
             <div className="dropdown-container">
               <div className="dropdown">
                 <button className="dropdown-button">THE GAME</button>
@@ -66,7 +61,7 @@ export default function RootLayout({
                 <button className="dropdown-button">UPDATES</button>
                 <div className="dropdown-content">
                   <Link href="/news">NEWS</Link>
-                  <Link href="/pages/release_notes">RELEASE NOTES</Link>
+                  <Link href="/release_notes">RELEASE NOTES</Link>
                   <Link href="/pages/roadmap">ROADMAP</Link>
                 </div>
               </div>
@@ -76,6 +71,11 @@ export default function RootLayout({
                 </Link>
               </div>
             </div>
+            <Link href="/">
+              <button className="text-4xl font-bold my-8 bg-transparent border-none cursor-pointer">
+                CLONE WARS ADVENTURES EMULATOR
+              </button>
+            </Link>
           </header>
           {children}
           <footer className="mt-8 text-sm text-gray-500 dark:text-gray-400">

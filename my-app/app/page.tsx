@@ -84,45 +84,53 @@ const Home = () => {
           </div>
         </div>
       </header>
-      <div className="inner-slider" style={{ backgroundImage: 'url(/assets/homepage//Rotator/RotatorFrame2.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center', height: '720px' }}>
-        <div className="slider-content" style={{ padding: '0px' }}>
-          <div className="rotator" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-            {files.map((file, index) => (
-              <div className="slide" key={index}>
-                <img src={file} alt={`Slide ${index + 1}`} />
-              </div>
-            ))}
-          </div>
-          <a className="prev" onClick={prevSlide}></a>
-          <a className="next" onClick={nextSlide}></a>
-        </div>
-      </div>
-
-      <div className="second-row mt-8">
-        <div className="newsbox">
-          <div className="header">
-            <div>LATEST NEWS</div>
-          </div>
-          <div className="content">
-            {posts.map((post, index) => (
-              <div className="newsarticle" key={index}>
-                <div className="title">{post.title}</div>
-                <div className="news">{post.content}</div>
-                <div className="readpost">
-                  <Link href={`/news/article/${post.title}`} className="view-link">
-                    VIEW
-                  </Link>
+      <div className="content-wrapper" style={{ backgroundImage: 'url(/path/to/your/background-image.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="inner-slider">
+          <div className="slider-content">
+            <div className="rotator" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+              {files.map((file, index) => (
+                <div className="slide" key={index}>
+                  <img src={file} alt={`Slide ${index + 1}`} />
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            <a className="prev" onClick={prevSlide}></a>
+            <a className="next" onClick={nextSlide}></a>
           </div>
         </div>
 
-        <div className="purplebox">
-          <div className="header">
-            <div>ROADMAP</div>
+        <div className="second-row mt-8">
+          <div className="newsbox">
+            <div className="header">
+              <div className="header-image-wrapper">
+                <img src="/assets/homepage/newsBox_top.png" alt="News Box Top" />
+                <div className="header-text">LATEST NEWS</div>
+              </div>
+            </div>
+            <div className="content-wrapper">
+              <div className="content-background"></div>
+              <div className="content">
+                {posts.map((post, index) => (
+                  <div className="newsarticle" key={index}>
+                    <div className="title">{post.title}</div>
+                    <div className="news">{post.content}</div>
+                    <div className="readpost">
+                      <Link href={`/news/article/${post.title}`} className="view-link">
+                        VIEW
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <div className="content"></div>
+
+          <div className="purplebox">
+            <div className="header">
+              <div>ROADMAP</div>
+            </div>
+            <div className="content"></div>
+          </div>
         </div>
       </div>
     </div>

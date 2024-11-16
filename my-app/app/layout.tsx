@@ -34,11 +34,6 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
             >
               {language === 'en' ? 'Español' : 'English'}
             </button>
-            <Link href="/">
-              <button className="text-4xl font-bold my-8 bg-transparent border-none cursor-pointer">
-                CLONE WARS ADVENTURES EMULATOR
-              </button>
-            </Link>
             <div className="dropdown-container">
               <div className="dropdown">
                 <button className="dropdown-button">{t.theGame}</button>
@@ -70,6 +65,11 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
                 </Link>
               </div>
             </div>
+            <Link href="/">
+              <button className="text-4xl font-bold my-8 bg-transparent border-none cursor-pointer">
+                CLONE WARS ADVENTURES EMULATOR
+              </button>
+            </Link>
           </header>
           {children}
           <footer className="mt-8 text-sm text-gray-500 dark:text-gray-400">

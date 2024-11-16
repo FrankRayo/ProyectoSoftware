@@ -7,14 +7,9 @@ import "./layout.css";
 import translations from './i18n';
 import { LanguageProvider, useLanguage } from './LanguageContext';
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const cloneWarsFont = localFont({
+  src: "../public/fonts/CloneWars.ttf",
+  variable: "--font-clone-wars",
 });
 
 function LayoutContent({ children }: { children: React.ReactNode }) {
@@ -24,7 +19,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
   return (
     <html lang={language}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${cloneWarsFont.variable} antialiased`}
       >
         <div className="container mx-auto px-4 text-center">
           <header className="py-4 relative">
@@ -66,7 +61,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
               </div>
             </div>
             <Link href="/">
-              <button className="text-4xl font-bold my-8 bg-transparent border-none cursor-pointer">
+              <button className="text-4xl font-bold my-8 bg-transparent border-none cursor-pointer clone-wars-font">
                 CLONE WARS ADVENTURES EMULATOR
               </button>
             </Link>

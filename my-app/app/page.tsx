@@ -15,9 +15,18 @@ const Home = () => {
   const [password, setPassword] = useState(''); // Estado para la contraseña
 
   const files = [
-    '/assets/homepage/Rotator/Slider 1.jpg',
+    
+    '/assets/homepage/Rotator/unknown.png',
+    '/assets/homepage/Rotator/WIPLIFEDAY.png',
+    '/assets/homepage/Rotator/CONTENT_TEAM_1.png',
+    '/assets/homepage/Rotator/LauncherBackground-1.png',
     '/assets/homepage/Rotator/Slider 2.png',
+    '/assets/homepage/Rotator/PreVizslaFailure (2).gif',
     '/assets/homepage/Rotator/Slider 3.png',
+    '/assets/homepage/Rotator/TUYFCWAMAGACTBAT_Final.png',
+    '/assets/homepage/Rotator/Slider 1.jpg',
+    
+
   ];
 
   const posts = [

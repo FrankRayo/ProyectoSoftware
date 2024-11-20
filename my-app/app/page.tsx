@@ -1,4 +1,4 @@
-"use client"; // Añadir esta directiva en la parte superior
+"use client";
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -15,18 +15,9 @@ const Home = () => {
   const [password, setPassword] = useState(''); // Estado para la contraseña
 
   const files = [
-    
-    '/assets/homepage/Rotator/unknown.png',
-    '/assets/homepage/Rotator/WIPLIFEDAY.png',
-    '/assets/homepage/Rotator/CONTENT_TEAM_1.png',
-    '/assets/homepage/Rotator/LauncherBackground-1.png',
-    '/assets/homepage/Rotator/Slider 2.png',
-    '/assets/homepage/Rotator/PreVizslaFailure (2).gif',
-    '/assets/homepage/Rotator/Slider 3.png',
-    '/assets/homepage/Rotator/TUYFCWAMAGACTBAT_Final.png',
     '/assets/homepage/Rotator/Slider 1.jpg',
-    
-
+    '/assets/homepage/Rotator/Slider 2.png',
+    '/assets/homepage/Rotator/Slider 3.png',
   ];
 
   const posts = [
@@ -61,46 +52,9 @@ const Home = () => {
 
   return (
     <div className="container mx-auto px-4 text-center" style={{ paddingTop: '5rem' }}>
-      <header className="py-4 relative">
-        <div className="flex justify-between items-start">
-          <div className="text-left">
-            <h1 className="text-4xl font-bold my-8">{t.welcome}</h1>
-            <p className="mb-8">{t.description}</p>
-            
-            <ol className="list-decimal list-inside mb-8">
-              <li>Open the file 
-                <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-                  app/page.tsx
-                </code>
-                .
-              </li>
-              <li>Save and see your changes instantly.</li>
-            </ol>
-          </div>
-          <div className="login-form bg-gray-100 p-4 rounded shadow-md">
-            <input
-              type="text"
-              placeholder={t.login.username}
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className="mb-2 p-2 border rounded w-full"
-            />
-            <input
-              type="password"
-              placeholder={t.login.password}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="p-2 border rounded w-full"
-            />
-            <Link href="/pages/download">
-              <button className="mt-2 bg-blue-500 text-white px-4 py-2 rounded">{t.login.enter}</button>
-            </Link>
-          </div>
-        </div>
-      </header>
-      <div className="inner-slider" style={{ backgroundImage: 'url(/assets/homepage//Rotator/RotatorFrame2.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center', height: '720px' }}>
+      <div className="inner-slider" style={{ backgroundImage: 'url(/assets/homepage//Rotator/RotatorFrame2.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center', height: '500px' }}>
         <div className="slider-content" style={{ padding: '0px' }}>
-          <div className="rotator" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+          <div className="rotator">
             {files.map((file, index) => (
               <div className="slide" key={index}>
                 <img src={file} alt={`Slide ${index + 1}`} />

@@ -4,7 +4,7 @@
 
 /* Container styling */
 .container {
-  max-width: 1200px;
+  max-width: 925px; /* Maximum width of the container */
   padding: 1rem;
 }
 
@@ -53,14 +53,14 @@ button:hover {
 /* Slider content styling */
 .slider-content {
   position: absolute;
-  top: 50.65%; /* Keep the original top percentage */
-  left: 49.99%; /* Keep the original left percentage */
+  top: 46.6%;
+  left: 49.99%;
   transform: translate(-50%, -50%);
-  width: 100%;
-  max-width: 1109px;
+  height: 465px;
+  width: 845px;
   overflow: hidden;
-  padding: 0; /* Remove padding to avoid showing edges */
-  border-radius: 15px; /* Add rounded edges to the slider */
+  padding: 0;
+  border-radius: 15px;
 }
 
 /* Rotator (slider) styling */

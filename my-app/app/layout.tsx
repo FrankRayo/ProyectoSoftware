@@ -18,9 +18,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
 
   return (
     <html lang={language}>
-      <body
-        className={`${cloneWarsFont.variable} antialiased`}
-      >
+      <body className={`${cloneWarsFont.variable} antialiased`}>
         <div className="container mx-auto px-4 text-center">
           <header className="py-4 relative">
             <button
@@ -55,18 +53,32 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
                 </div>
               </div>
               <div className="dropdown">
-                <Link href="/contact">
+                <Link href="/pages/login">
                   <button className="dropdown-button">{t.contactUs}</button>
                 </Link>
               </div>
             </div>
             <Link href="/">
-              <button className="text-4xl font-bold my-8 bg-transparent border-none cursor-pointer clone-wars-font">
-                CLONE WARS ADVENTURES EMULATOR
+              <button className="header-title">
+                {/* The background image will be applied via CSS */}
               </button>
             </Link>
           </header>
-          {children}
+          <div className="content-header">
+            <img
+              src="/assets/layout/content-header.png"
+              className="content-header-img"
+            />
+          </div>
+          <div className="content-body">
+            <img
+              src="/assets/layout/content-body.png"
+              className="content-body-img"
+            />
+          </div>
+          <main className="relative z-10">
+            {children}
+          </main>
           <footer className="mt-8 text-sm text-gray-500 dark:text-gray-400">
             <p>
               Built with <a href="https://nextjs.org" className="underline">Next.js</a> and <a href="https://tailwindcss.com" className="underline">Tailwind CSS</a>.

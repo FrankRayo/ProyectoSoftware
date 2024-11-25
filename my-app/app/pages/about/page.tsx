@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import "./page.css"; // Importa el CSS específico de la página About
+import "./page.css"; // Import specific CSS for the page
 import translations from '../../i18n';
 import { useLanguage } from '../../LanguageContext';
 
@@ -10,7 +10,7 @@ const About = () => {
   const t = translations[language].aboutPage;
 
   return (
-    <div className="about-container">
+    <div className="main-container">
       <h1 className="text-4xl font-bold my-8">{t.title}</h1>
       <div className="about-text-box mb-8">
         <p className="about-text">

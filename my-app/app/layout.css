@@ -101,25 +101,25 @@ body {
 
 /* Content header styling */
 .content-header {
-  position: absolute;
-  top: -262px;
-  left: 50%;
+  position: relative;
+  /*top: -262px;
+  left: 50%;*/
   width: 100%;
   height: 100%;
-  transform: translateX(-50%);
   z-index: -1;
 }
 .content-body {
   position: absolute;
-  top: 758px;
-  left: 50%;
-  width: 100%;
+  /*top: 758px;
+  left: 50%;*/
+  width: 96.5%;
   min-height: 147px;
-  transform: translateX(-50%);
   z-index: -1;
   background-image: url('/assets/layout/content-body.png');
   background-repeat: repeat-y; /* Repeat the image vertically */ /* Start repeating from the top center */
   background-size: contain; /* Ensure the entire image is visible */
+  background-position: top center; /* Position the image at the top center */
+
 }
 
 
@@ -127,12 +127,16 @@ body {
 .content-header-img {
   width: 100%;
   height: 100%;
+  top: 5px;
   object-fit: contain; /* Ensure the entire image is visible */
+  object-position: top center; /* Position the image at the top center */
 }
 
 .content-body-img{
   display: none; /* Hide the img element as the background image is used */
-
+  object-fit: contain; /* Ensure the entire image is visible */
+  object-position: top center; /* Position the image at the top center */
+  
 };
 
 button.header-title {

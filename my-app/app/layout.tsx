@@ -6,6 +6,7 @@ import Link from 'next/link';
 import "./layout.css";
 import translations from './i18n';
 import { LanguageProvider, useLanguage } from './LanguageContext';
+import { useEffect } from "react";
 
 const cloneWarsFont = localFont({
   src: "../public/fonts/CloneWars.ttf",
@@ -16,11 +17,29 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
   const { language, toggleLanguage } = useLanguage();
   const t = translations[language];
 
+  useEffect(() => {
+    const updateContentBodyHeight = () => {
+      const mainContainer = document.querySelector('.main-container');
+      const contentBody = document.querySelector('.content-body');
+      if (mainContainer && contentBody) {
+        const mainContainerHeight = mainContainer.clientHeight;
+        contentBody.style.height = `${mainContainerHeight}px`;
+      }
+    };
+
+    updateContentBodyHeight();
+    window.addEventListener('resize', updateContentBodyHeight);
+
+    return () => {
+      window.removeEventListener('resize', updateContentBodyHeight);
+    };
+  }, []);
+
   return (
     <html lang={language}>
       <body className={`${cloneWarsFont.variable} antialiased`}>
         <div className="container mx-auto px-4 text-center">
-          <header className="py-4 relative">
+          <div>
             <button
               onClick={toggleLanguage}
               className="absolute top-0 right-0 mt-4 mr-4 bg-blue-500 text-white px-4 py-2 rounded"
@@ -63,7 +82,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
                 {/* The background image will be applied via CSS */}
               </button>
             </Link>
-          </header>
+          </div>
           <div className="content-header">
             <img
               src="/assets/layout/content-header.png"
@@ -79,7 +98,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
           <main className="relative z-10">
             {children}
           </main>
-          <footer className="mt-8 text-sm text-gray-500 dark:text-gray-400">
+          <div className="mt-8 text-sm text-gray-500 dark:text-gray-400">
             <p>
               Built with <a href="https://nextjs.org" className="underline">Next.js</a> and <a href="https://tailwindcss.com" className="underline">Tailwind CSS</a>.
             </p>
@@ -94,7 +113,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
               <Link href="/join-the-team" className="text-blue-500 hover:underline">{t.joinTheTeam}</Link>
               <span>|</span>
             </div>
-          </footer>
+          </div>
         </div>
       </body>
     </html>

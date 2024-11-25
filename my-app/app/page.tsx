@@ -51,7 +51,7 @@ const Home = () => {
   }, [currentSlide]);
 
   return (
-    <div className="container mx-auto px-4 text-center" style={{ paddingTop: '5rem' }}>
+    <div className="main-container" style={{ paddingTop: '5rem' }}>
       <div className="inner-slider" style={{ backgroundImage: 'url(/assets/homepage//Rotator/RotatorFrame2.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center', height: '500px' }}>
         <div className="slider-content" style={{ padding: '0px' }}>
           <div className="rotator">

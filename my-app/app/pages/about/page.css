@@ -4,7 +4,7 @@
 
 /* Container styling */
 .container {
-  max-width: 1200px;
+  max-width: 925px;
   margin: 0 auto;
   padding: 1rem;
 }
@@ -30,8 +30,12 @@ button:hover {
 }
 
 /* About page specific styling */
-.about-container {
-  padding: 2rem;
+.main-container {
+  padding: 1rem;
+  object-position: top center;
+  padding-right: 4rem;
+  padding-left: 4rem;
+  padding-bottom: 4rem;
 }
 
 .about-text-box {

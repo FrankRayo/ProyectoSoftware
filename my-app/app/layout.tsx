@@ -95,9 +95,16 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
               className="content-body-img"
             />
           </div>
+          
           <main className="relative z-10">
             {children}
           </main>
+          <div className="content-footer">
+            <img
+              src="/assets/layout/content-footer.png"
+              className="content-footer-img"
+            />
+          </div>
           <div className="mt-8 text-sm text-gray-500 dark:text-gray-400">
             <p>
               Built with <a href="https://nextjs.org" className="underline">Next.js</a> and <a href="https://tailwindcss.com" className="underline">Tailwind CSS</a>.

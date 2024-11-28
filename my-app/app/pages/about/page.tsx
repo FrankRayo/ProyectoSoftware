@@ -22,16 +22,6 @@ const About = () => {
         <p className="about-text">
           {t.about3}
         </p>
-        <p className="about-text">
-          {t.about4}
-        </p>
-      </div>
-      <div className="about-image">
-      </div>
-      <div className="about-text-box">
-        <p className="about-text">
-          {t.about5}
-        </p>
       </div>
     </div>
   );

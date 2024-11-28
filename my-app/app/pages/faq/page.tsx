@@ -16,8 +16,9 @@ const FAQ = () => {
   };
 
   return (
-    <div className="faq-container">
-      <h1 className="faq-title">{t.title}</h1>
+    <div className="main-container">
+      <div className="faq-title">{t.title}
+      </div>
       <div className="faq-list">
         {t.questions.map((faq, index) => (
           <div key={index} className="faq-item">

@@ -15,9 +15,15 @@ const Home = () => {
   const [password, setPassword] = useState(''); // Estado para la contraseña
 
   const files = [
-    '/assets/homepage/Rotator/Slider 1.jpg',
+    '/assets/homepage/Rotator/unknown.png',
+    '/assets/homepage/Rotator/WIPLIFEDAY.png',
+    '/assets/homepage/Rotator/CONTENT_TEAM_1.png',
+    '/assets/homepage/Rotator/LauncherBackground-1.png',
     '/assets/homepage/Rotator/Slider 2.png',
+    '/assets/homepage/Rotator/PreVizslaFailure (2).gif',
     '/assets/homepage/Rotator/Slider 3.png',
+    '/assets/homepage/Rotator/TUYFCWAMAGACTBAT_Final.png',
+    '/assets/homepage/Rotator/Slider 1.jpg',
   ];
 
   const posts = [
@@ -35,38 +41,38 @@ const Home = () => {
     },
   ];
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? files.length - 1 : prev - 1));
-  };
+ const prevSlide = () => {
+  setCurrentSlide((prev) => (prev === 0 ? files.length - 1 : prev - 1));
+};
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === files.length - 1 ? 0 : prev + 1));
-  };
+const nextSlide = () => {
+  setCurrentSlide((prev) => (prev === files.length - 1 ? 0 : prev + 1));
+};
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 7000); // Cambiar diapositiva cada 7 segundos
-    return () => clearInterval(interval);
-  }, [currentSlide]);
+useEffect(() => {
+  const interval = setInterval(() => {
+    nextSlide();
+  }, 7000); // Change slide every 7 seconds
+  return () => clearInterval(interval);
+}, [currentSlide]);
 
-  return (
-    <div className="main-container" style={{ paddingTop: '5rem' }}>
-      <div className="inner-slider" style={{ backgroundImage: 'url(/assets/homepage//Rotator/RotatorFrame2.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center', height: '500px' }}>
-        <div className="slider-content" style={{ padding: '0px' }}>
-          <div className="rotator">
-            {files.map((file, index) => (
-              <div className="slide" key={index}>
-                <img src={file} alt={`Slide ${index + 1}`} />
-              </div>
-            ))}
-          </div>
-          <a className="prev" onClick={prevSlide}></a>
-          <a className="next" onClick={nextSlide}></a>
+return (
+  <div className="main-container" style={{ paddingTop: '2rem' }}>
+    <div className="inner-slider" style={{ backgroundImage: 'url(/assets/homepage/Rotator/RotatorFrame2.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center', height: '500px', width: '825px', marginLeft: '35px' }}>
+      <div className="slider-content" style={{ padding: '0px' }}>
+        <div className="rotator" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+          {files.map((file, index) => (
+            <div className="slide" key={index}>
+              <img src={file} alt={`Slide ${index + 1}`} />
+            </div>
+          ))}
         </div>
+        <a className="prev" onClick={prevSlide}></a>
+        <a className="next" onClick={nextSlide}></a>
       </div>
+    </div>  
 
-      <div className="second-row mt-8">
+      <div className="second-row">
         <div className="newsbox">
           <div className="header">
             <div>{t.latestNews}</div>

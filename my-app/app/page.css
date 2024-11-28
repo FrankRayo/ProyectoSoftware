@@ -8,6 +8,10 @@
   padding: 1rem;
 }
 
+.main-container {
+  padding-top: 2rem; /* Increase the padding-top */
+  margin: auto;
+}
 /* Header styling */
 header {
   position: relative;
@@ -52,12 +56,12 @@ button:hover {
 
 /* Slider content styling */
 .slider-content {
-  position: absolute;
-  top: 46.6%;
+  position: relative;
+  top: 50%;
   left: 49.99%;
   transform: translate(-50%, -50%);
-  height: 465px;
-  width: 845px;
+  height: 436px;
+  width: 807px;
   overflow: hidden;
   padding: 0;
   border-radius: 15px;
@@ -72,7 +76,7 @@ button:hover {
 /* Slide styling */
 .slide {
   min-width: 100%;
-  height: 606px;
+  height: 440px;
   border-radius: 15px; /* Add rounded edges to the slides */
 }
 
@@ -112,7 +116,10 @@ button:hover {
 .second-row {
   display: flex;
   flex-direction: column;
+  margin: auto;
   margin-top: 2rem; /* Add margin-top for the second row */
+  margin-right: 2.5rem;
+  width:800px;
   gap: 1rem; /* Add gap between the newsbox and purplebox */
 }
 
@@ -167,3 +174,4 @@ button:hover {
 .view-link:hover {
   text-decoration: underline;
 }
+

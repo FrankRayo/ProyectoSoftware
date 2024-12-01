@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import './page.css'; // Importar CSS específico de la página
+import './page.css'; // Import specific CSS for the page
 import translations from './i18n';
 import { useLanguage } from './LanguageContext';
 
@@ -11,8 +11,9 @@ const Home = () => {
   const t = translations[language];
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [username, setUsername] = useState(''); // Estado para el nombre de usuario
-  const [password, setPassword] = useState(''); // Estado para la contraseña
+  const [username, setUsername] = useState(''); // State for username
+  const [password, setPassword] = useState(''); // State for password
+  const [refresh, setRefresh] = useState(false); // State to trigger refresh
 
   const files = [
     '/assets/homepage/Rotator/unknown.png',
@@ -23,8 +24,24 @@ const Home = () => {
     '/assets/homepage/Rotator/PreVizslaFailure (2).gif',
     '/assets/homepage/Rotator/Slider 3.png',
     '/assets/homepage/Rotator/TUYFCWAMAGACTBAT_Final.png',
-    '/assets/homepage/Rotator/Slider 1.jpg',
   ];
+
+  useEffect(() => {
+    // Reset poop to 0 every time a new page is opened
+    localStorage.setItem('poop', '0');
+  }, []);
+
+  useEffect(() => {
+    // Trigger a refresh when the component mounts
+    let poop = localStorage.getItem('poop');
+    if (poop === null) {
+      poop = '0';
+    }
+    if (poop === '0') {
+      localStorage.setItem('poop', '1');
+      window.location.reload();
+    }
+  }, []);
 
   const posts = [
     {

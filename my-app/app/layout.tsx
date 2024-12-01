@@ -77,11 +77,21 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
                 </Link>
               </div>
             </div>
-            <Link href="/">
-              <button className="header-title">
-                {/* The background image will be applied via CSS */}
-              </button>
-            </Link>
+            
+          </div>
+          <div className="header-image">
+            <div className="image-home">
+              <Link href="/">
+                  <button className="header-title">
+                    {/* The background image will be applied via CSS */}
+                  </button>
+              </Link>
+              </div>
+            <div className="header-text">
+              <Link href="/pages/about">
+                <button className="header-button">{t.about}</button>
+              </Link>
+              </div>
           </div>
           <div className="content-header">
             <img

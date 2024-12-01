@@ -154,13 +154,12 @@ body {
   object-position: top center; /* Position the image at the top center */ 
 }
 
-button.header-title {
+.header-title {
   background-image: url('/assets/layout/Header.png') !important; /* Use the correct image path */
   background-size: cover !important; /* Ensure the background image covers the entire element */
   background-position: center !important; /* Center the background image */
   background-repeat: no-repeat !important; /* Do not repeat the background image */
-  width: 300px !important; /* Set the width of the element */
-  height: 100px !important; /* Set the height of the element */
+  width: 925px !important; /* Set the width of the element */
   display: inline-block !important; /* Ensure the element is displayed as a block */
   border: none !important; /* Remove any default border */
   cursor: pointer !important; /* Ensure the element is clickable */

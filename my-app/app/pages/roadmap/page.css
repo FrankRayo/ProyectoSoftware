@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.container {
+    width: 925px;
+    padding: 1rem;
+  }
+
+
+.header {
+    position: relative;
+    padding: 1rem;
+  }
+.main-container {
+    padding-top: 2rem;
+    margin: auto;
+  }

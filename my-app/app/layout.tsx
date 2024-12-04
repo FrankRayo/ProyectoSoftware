@@ -40,9 +40,13 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
       <body className={`${cloneWarsFont.variable} antialiased`}>
         <div className="container mx-auto px-4 text-center">
           <div>
+            <img
+              src='/assets/layout/navbarbackground.png'
+              className="dropdown-img"
+            />
             <button
               onClick={toggleLanguage}
-              className="absolute top-0 right-0 mt-4 mr-4 bg-blue-500 text-white px-4 py-2 rounded"
+              className="absolute top-0 right-0 mr-4 bg-blue-500 text-white px-4 py-2 rounded"
             >
               {language === 'en' ? 'Español' : 'English'}
             </button>
@@ -80,18 +84,14 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
             
           </div>
           <div className="header-image">
-            <div className="image-home">
+            <div className="home-click"> 
               <Link href="/">
                   <button className="header-title">
                     {/* The background image will be applied via CSS */}
                   </button>
               </Link>
               </div>
-            <div className="header-text">
-              <Link href="/pages/about">
-                <button className="header-button">{t.about}</button>
-              </Link>
-              </div>
+          
           </div>
           <div className="content-header">
             <img
@@ -113,6 +113,8 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
             <img
               src="/assets/layout/content-footer.png"
               className="content-footer-img"
+              style={{ opacity: 0 }} // Set the transparen  cy here
+
             />
           </div>
           <div className="mt-8 text-sm text-gray-500 dark:text-gray-400">

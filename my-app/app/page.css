@@ -4,8 +4,9 @@
 
 /* Container styling */
 .container {
-  max-width: 925px; /* Maximum width of the container */
+  width: 925px; /* Maximum width of the container */
   padding: 1rem;
+  padding-top:0;
 }
 
 .main-container {
@@ -118,12 +119,12 @@ button:hover {
   flex-direction: column;
   margin: auto;
   margin-top: 2rem; /* Add margin-top for the second row */
-  margin-right: 2.5rem;
+  margin-right: 1.5rem;
   width:800px;
   gap: 1rem; /* Add gap between the newsbox and purplebox */
 }
 
-@media (min-width: 768px) {
+@media {
   .second-row {
     flex-direction: row;
   }

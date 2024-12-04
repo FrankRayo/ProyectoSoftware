@@ -27,33 +27,23 @@ const Home = () => {
   ];
 
   useEffect(() => {
-    // Reset poop to 0 every time a new page is opened
-    localStorage.setItem('poop', '0');
-  }, []);
-
-  useEffect(() => {
-    // Trigger a refresh when the component mounts
-    let poop = localStorage.getItem('poop');
-    if (poop === null) {
-      poop = '0';
-    }
-    if (poop === '0') {
-      localStorage.setItem('poop', '1');
-      window.location.reload();
-    }
+        setRefresh(true);
   }, []);
 
   const posts = [
     {
-      title: 'Post 1',
-      content: 'Content of the first post.',
+      title: 'CLOSED TESTING REGISTRATION NOW OPEN!',
+      url: 'closed-testing',
+      content: 'before we get started the team would like to wish everyone a very happy new year. With the new year, we have decided to take a new direction for the game so we have introduced a few changes to alpha testing and our roadmap.',
     },
     {
       title: 'Post 2',
+      url: 'post-2',
       content: 'Content of the second post.',
     },
     {
       title: 'Post 3',
+      url: 'post-3',
       content: 'Content of the third post.',
     },
   ];
@@ -75,7 +65,7 @@ useEffect(() => {
 
 return (
   <div className="main-container" style={{ paddingTop: '2rem' }}>
-    <div className="inner-slider" style={{ backgroundImage: 'url(/assets/homepage/Rotator/RotatorFrame2.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center', height: '500px', width: '825px', marginLeft: '35px' }}>
+    <div className="inner-slider" style={{ backgroundImage: 'url(/assets/homepage/Rotator/RotatorFrame2.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center', height: '500px', width: '825px', marginLeft: '50px' }}>
       <div className="slider-content" style={{ padding: '0px' }}>
         <div className="rotator" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
           {files.map((file, index) => (
@@ -100,7 +90,7 @@ return (
                 <div className="title">{post.title}</div>
                 <div className="news">{post.content}</div>
                 <div className="readpost">
-                  <Link href={`/news/article/${post.title}`} className="view-link">
+                  <Link href={`/pages/newspost/${post.url}`} className="view-link">
                     {t.view}
                   </Link>
                 </div>

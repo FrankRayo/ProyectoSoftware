@@ -4,7 +4,7 @@
 
 /* Container styling */
 .container {
-  max-width: 925px;
+  width: 925px;
   margin: 0 auto;
   padding: 1rem;
 }
@@ -48,6 +48,7 @@ button:hover {
   margin: 0;
   font-size: 1.5rem;
 }
+
 
 .about-image {
   margin: 2rem 0;

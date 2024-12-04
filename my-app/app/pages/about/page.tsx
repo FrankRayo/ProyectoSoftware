@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import "./page.css"; // Import specific CSS for the page
+import "./about.css"; // Import specific CSS for the page
 import translations from '../../i18n';
 import { useLanguage } from '../../LanguageContext';
 

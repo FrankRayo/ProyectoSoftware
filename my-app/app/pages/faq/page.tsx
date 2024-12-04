@@ -1,7 +1,7 @@
 "use client"; // Add this directive at the top
 
 import React, { useState } from 'react';
-import './page.css'; // Correct import path for page-specific CSS
+import './faq.css'; // Correct import path for page-specific CSS
 import translations from '../../i18n';
 import { useLanguage } from '../../LanguageContext';
 

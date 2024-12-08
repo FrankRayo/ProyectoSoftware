@@ -6,8 +6,10 @@ import "./page.css";
 const Page = () => {
   useEffect(() => {
     const updateContentBodyHeight = () => {
-      const mainContainer = document.querySelector('.main-container');
-      const contentBody = document.querySelector('.content-body');
+      // Cast elements to HTMLElement to access the 'style' property
+      const mainContainer = document.querySelector('.main-container') as HTMLElement;
+      const contentBody = document.querySelector('.content-body') as HTMLElement;
+
       if (mainContainer && contentBody) {
         const mainContainerHeight = mainContainer.clientHeight;
         contentBody.style.height = `${mainContainerHeight}px`;
@@ -30,8 +32,7 @@ const Page = () => {
           className="content-body-img"
         />
       </div>
-      <div className="main-container"
-      >
+      <div className="main-container">
         <img
           src="/assets/roadmap/Roadmap2023_Transparent_BG.png"
           alt="Roadmap 2023"

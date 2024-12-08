@@ -37,13 +37,6 @@ body {
 }
 
 /* Container styling */
-.container {
-  margin-top: 1rem; /* Add margin-top for the container */
-  max-height: 100%;
-  width: 925px; /* Maximum width of the container */
-  margin: 0 auto; /* Center the container */
-  position: relative; /* Ensure positioned elements are relative to this container */
-}
 
 .dropdown-img {
   position: absolute;
@@ -81,7 +74,7 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: rgba(0, 91, 161, 0.788);
+  background-color: #005ba1c9;
   min-width: 160px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -112,19 +105,6 @@ body {
   width: 925px;
   height: 100%;
   z-index: -1;
-}
-.content-body {
-  position: absolute;
-  /*top: 758px;
-  left: 50%;*/
-  width: 100%;
-  min-height: 147px;
-  z-index: -1;
-  background-image: url('/assets/layout/content-body.png');
-  background-repeat: repeat-y; /* Repeat the image vertically */ /* Start repeating from the top center */
-  background-size: contain; /* Ensure the entire image is visible */
-  background-position: top center; /* Position the image at the top center */
-
 }
 
 .content-footer{
@@ -169,6 +149,7 @@ body {
   height: 264px;
   margin-top: 2rem;
   margin-bottom: 1rem;
+  display: 	flex;
 }
 .header-title {
   width: 925px !important; /* Set the width of the element */
@@ -178,7 +159,11 @@ body {
 .image-home{
   height: 300px;
 }
-
+.home-click, .play-click{
+  width: 50%;
+  height: 260px;
+  min-width: 460px;
+}
 /* Utility classes */
 @layer utilities {
   .text-balance {

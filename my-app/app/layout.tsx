@@ -6,7 +6,6 @@ import Link from 'next/link';
 import "./layout.css";
 import translations from './i18n';
 import { LanguageProvider, useLanguage } from './LanguageContext';
-import { useEffect } from "react";
 
 const cloneWarsFont = localFont({
   src: "../public/fonts/CloneWars.ttf",
@@ -16,24 +15,6 @@ const cloneWarsFont = localFont({
 function LayoutContent({ children }: { children: React.ReactNode }) {
   const { language, toggleLanguage } = useLanguage();
   const t = translations[language];
-
-  useEffect(() => {
-    const updateContentBodyHeight = () => {
-      const mainContainer = document.querySelector('.main-container');
-      const contentBody = document.querySelector('.content-body');
-      if (mainContainer && contentBody) {
-        const mainContainerHeight = mainContainer.clientHeight;
-        contentBody.style.height = `${mainContainerHeight}px`;
-      }
-    };
-
-    updateContentBodyHeight();
-    window.addEventListener('resize', updateContentBodyHeight);
-
-    return () => {
-      window.removeEventListener('resize', updateContentBodyHeight);
-    };
-  }, []);
 
   return (
     <html lang={language}>
@@ -84,14 +65,14 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
             
           </div>
           <div className="header-image">
-            <div className="home-click"> 
-              <Link href="/">
-                  <button className="header-title">
-                    {/* The background image will be applied via CSS */}
-                  </button>
-              </Link>
+            <Link href="/">
+              <div className="home-click"> 
               </div>
-          
+            </Link>
+            <Link href="/pages/login">
+              <div className="play-click"> 
+              </div>
+            </Link>
           </div>
           <div className="content-header">
             <img
@@ -99,13 +80,6 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
               className="content-header-img"
             />
           </div>
-          <div className="content-body">
-            <img
-              src="/assets/layout/content-body.png"
-              className="content-body-img"
-            />
-          </div>
-          
           <main className="relative z-10">
             {children}
           </main>

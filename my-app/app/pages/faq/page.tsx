@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import './faq.css'; // Correct import path for page-specific CSS
 import translations from '../../i18n';
 import { useLanguage } from '../../LanguageContext';
+import { useEffect } from "react";
 
 const FAQ = () => {
   const { language } = useLanguage();
@@ -14,8 +15,31 @@ const FAQ = () => {
   const toggleFAQ = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
+  useEffect(() => {
+    const updateContentBodyHeight = () => {
+      const mainContainer = document.querySelector('.main-container');
+      const contentBody = document.querySelector('.content-body');
+      if (mainContainer && contentBody) {
+        const mainContainerHeight = mainContainer.clientHeight;
+        contentBody.style.height = `${mainContainerHeight}px`;
+      }
+    };
 
+    updateContentBodyHeight();
+    window.addEventListener('resize', updateContentBodyHeight);
+
+    return () => {
+      window.removeEventListener('resize', updateContentBodyHeight);
+    };
+  }, []);
   return (
+  <>
+    <div className="content-body">
+            <img
+              src="/assets/layout/content-body.png"
+              className="content-body-img"
+            />
+    </div>
     <div className="main-container">
       <div className="faq-title">{t.title}
       </div>
@@ -30,6 +54,7 @@ const FAQ = () => {
         ))}
       </div>
     </div>
+  </>
   );
 };
 

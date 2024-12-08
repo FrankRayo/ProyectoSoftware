@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import './page.css'; // Import specific CSS for the page
+import './home.css'; // Import specific CSS for the page
 import translations from './i18n';
 import { useLanguage } from './LanguageContext';
 
@@ -62,8 +62,31 @@ useEffect(() => {
   }, 7000); // Change slide every 7 seconds
   return () => clearInterval(interval);
 }, [currentSlide]);
+useEffect(() => {
+  const updateContentBodyHeight = () => {
+    const mainContainer = document.querySelector('.main-container');
+    const contentBody = document.querySelector('.content-body');
+    if (mainContainer && contentBody) {
+      const mainContainerHeight = mainContainer.clientHeight;
+      contentBody.style.height = `${mainContainerHeight}px`;
+    }
+  };
 
+  updateContentBodyHeight();
+  window.addEventListener('resize', updateContentBodyHeight);
+
+  return () => {
+    window.removeEventListener('resize', updateContentBodyHeight);
+  };
+}, []);
 return (
+  <>
+    <div className="content-body">
+            <img
+              src="/assets/layout/content-body.png"
+              className="content-body-img"
+            />
+    </div>
   <div className="main-container" style={{ paddingTop: '2rem' }}>
     <div className="inner-slider" style={{ backgroundImage: 'url(/assets/homepage/Rotator/RotatorFrame2.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center', height: '500px', width: '825px', marginLeft: '50px' }}>
       <div className="slider-content" style={{ padding: '0px' }}>
@@ -107,6 +130,7 @@ return (
         </div>
       </div>
     </div>
+  </>
   );
 };
 

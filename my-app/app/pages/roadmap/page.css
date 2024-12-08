@@ -4,16 +4,32 @@
 
 
 .container {
-    width: 925px;
-    padding: 1rem;
-  }
+  width: 925px; /* Maximum width of the container */
+  padding: 1rem;
+  padding-top:0;
+}
+.container {
+  margin-top: 1rem; /* Add margin-top for the container */
+  max-height: 100%;
+  width: 925px; /* Maximum width of the container */
+  margin: 0 auto; /* Center the container */
+  position: relative; /* Ensure positioned elements are relative to this container */
+}
 
+.content-body {
+  position: absolute;
+  /*top: 758px;
+  left: 50%;*/
+  width: 925px;
+  min-height: 147px;
+  z-index: -1;
+  background-image: url('/assets/layout/content-body.png');
+  background-repeat: repeat-y; /* Repeat the image vertically */ /* Start repeating from the top center */
+  background-size: contain; /* Ensure the entire image is visible */
+  background-position: top center; /* Position the image at the top center */
 
-.header {
-    position: relative;
-    padding: 1rem;
-  }
+}
+
 .main-container {
-    padding-top: 2rem;
-    margin: auto;
-  }
+  margin-left: 30px;
+}

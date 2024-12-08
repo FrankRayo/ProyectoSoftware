@@ -8,7 +8,27 @@
   padding: 1rem;
   padding-top:0;
 }
+.container {
+  margin-top: 1rem; /* Add margin-top for the container */
+  max-height: 100%;
+  width: 925px; /* Maximum width of the container */
+  margin: 0 auto; /* Center the container */
+  position: relative; /* Ensure positioned elements are relative to this container */
+}
 
+.content-body {
+  position: absolute;
+  /*top: 758px;
+  left: 50%;*/
+  width: 925px;
+  min-height: 147px;
+  z-index: -1;
+  background-image: url('/assets/layout/content-body.png');
+  background-repeat: repeat-y; /* Repeat the image vertically */ /* Start repeating from the top center */
+  background-size: contain; /* Ensure the entire image is visible */
+  background-position: top center; /* Position the image at the top center */
+
+}
 .main-container {
   padding-top: 2rem; /* Increase the padding-top */
   margin: auto;
@@ -116,18 +136,12 @@ button:hover {
 /* Second row styling */
 .second-row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin: auto;
   margin-top: 2rem; /* Add margin-top for the second row */
   margin-right: 1.5rem;
   width:800px;
   gap: 1rem; /* Add gap between the newsbox and purplebox */
-}
-
-@media {
-  .second-row {
-    flex-direction: row;
-  }
 }
 
 .newsbox, .purplebox {
@@ -176,3 +190,22 @@ button:hover {
   text-decoration: underline;
 }
 
+
+@media (max-width: 1023px) {
+  .second-row {
+    flex-direction: column;
+    margin-left: 70px;
+  }
+  .newsbox, .purplebox {
+    max-width: 98%; /* Reduce the width of the boxes */
+  }
+}
+
+@media (max-width: 768px) {
+  .second-row {
+    flex-direction: column;
+  }
+  .newsbox, .purplebox {
+    max-width: 98%; /* Reduce the width of the boxes */
+  }
+}

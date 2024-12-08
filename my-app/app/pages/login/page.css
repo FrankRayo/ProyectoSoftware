@@ -1,31 +1,90 @@
-.login-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-  }
-  
-  .login-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  input {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button {
-    padding: 0.5rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
+.container {
+  margin-top: 1rem;
+  max-height: 100%;
+  width: 925px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.content-body {
+  position: absolute;
+  width: 925px;
+  min-height: 147px;
+  z-index: -1;
+  background-image: url("/assets/layout/content-body.png");
+  background-repeat: repeat-y;
+  background-size: contain;
+  background-position: top center;
+}
+
+.main-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilo general para inputs */
+input {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333; /* Color del texto */
+  background-color: #f9f9f9; /* Color de fondo */
+}
+
+/* Cambiar el borde y fondo cuando el input está en foco */
+input:focus {
+  border-color: #007bff; /* Cambia el color del borde al enfocar */
+  outline: none;
+  background-color: #eaf4fe;
+  color: #222;
+}
+
+/* Input de tipo password personalizado */
+input[type="password"] {
+  border: 1px solid #5bc0de;
+  background-color: #f5faff;
+  color: #000000;
+}
+
+/* Input de tipo texto personalizado */
+input[type="text"] {
+  border: 1px solid #5bc0de;
+  background-color: #f5faff;
+  color: #000000;
+}
+
+/* Input deshabilitado */
+input:disabled {
+  background-color: #e9ecef;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Añadir un efecto hover a los inputs */
+input:hover {
+  border-color: #6c757d;
+  background-color: #f1f1f1;
+}
+
+/* Estilo para el botón */
+button {
+  padding: 0.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

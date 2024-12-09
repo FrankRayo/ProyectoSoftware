@@ -10,11 +10,6 @@
   position: relative; /* Ensure positioned elements are relative to this container */
 }
 
-.container {
-  width: 925px !important;
-  margin: 0 auto;
-  padding: 1rem;
-}
 
 .content-body {
   position: absolute;

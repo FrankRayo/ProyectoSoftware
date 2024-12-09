@@ -10,11 +10,7 @@
   margin: 0 auto; /* Center the container */
   position: relative; /* Ensure positioned elements are relative to this container */
 }
-.container {
-  width: 925px;
-  margin: 0 auto;
-  padding: 1rem;
-}
+
 
 .content-body {
   position: absolute;

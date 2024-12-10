@@ -7,38 +7,47 @@ import { useRouter } from "next/navigation";
 import translations from "../../i18n"; // Import translations
 import { useLanguage } from "../../LanguageContext"; // Import Language Context
 
-const SignupPage: React.FC = () => {
+const Signup: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState(""); // State to show error messages
-  const [successMessage, setSuccessMessage] = useState("");
+  const [message, setMessage] = useState("");
+  const [isSuccessful, setIsSuccessful] = useState(false);
+  const [emailError, setEmailError] = useState("");
   const router = useRouter();
   const { language } = useLanguage(); // Get the current language
-  const t = translations[language as keyof typeof translations].signup; // Get translations for the signup section
+  const t = translations[language as keyof typeof translations]; // Get translations for the current language
 
   const handleSignup = async () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setEmailError(t.signup?.invalidEmail || "Invalid email format");
+      return;
+    } else {
+      setEmailError("");
+    }
+
     try {
-      const response = await fetch("/api/auth/password/register", {
+      const res = await fetch("/api/auth/password/register", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept-Language": language, // Send the current language
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
 
-      const result = await response.json();
+      const result = await res.json();
+      setMessage(result.message);
 
-      if (!response.ok) {
-        setErrorMessage(result.message || t.signupFailed || "Signup failed. Please try again.");
-        return;
+      if (res.status === 201) {
+        setIsSuccessful(true);
+        setMessage(t.signup?.signupSuccess || "Signup successful! Redirecting...");
+        setTimeout(() => router.push("/pages/login"), 2000); // Redirect to login page
+      } else {
+        setIsSuccessful(false);
+        setMessage(t.signup?.signupFailed || "Signup failed. Please try again.");
       }
-
-      setSuccessMessage(t.signupSuccess || "Signup successful! Redirecting...");
-      setTimeout(() => router.push("/pages/login"), 2000); // Redirect to login page
     } catch (error) {
       console.error("Error during signup:", error);
-      setErrorMessage(t.errorMessage || "Something went wrong. Please try again later.");
+      setMessage(t.signup?.errorMessage || "Something went wrong. Please try again later.");
+      setIsSuccessful(false);
     }
   };
 
@@ -51,37 +60,36 @@ const SignupPage: React.FC = () => {
         (contentBody as HTMLElement).style.height = `${mainContainerHeight}px`;
       }
     };
-
+  
     // Update height initially
     updateContentBodyHeight();
-
+  
     // Observe changes to the main container
     const mainContainer = document.querySelector(".main-container");
     if (mainContainer) {
       const observer = new MutationObserver(() => {
         updateContentBodyHeight();
       });
-
+  
       observer.observe(mainContainer, {
         attributes: true,
         childList: true,
         subtree: true,
       });
-
+  
       // Cleanup on unmount
       return () => {
         observer.disconnect();
       };
     }
-
+  
     // Fallback to window resize listener
     window.addEventListener("resize", updateContentBodyHeight);
-
+  
     return () => {
       window.removeEventListener("resize", updateContentBodyHeight);
     };
   }, []);
-
   return (
     <>
       <div className="content-body">
@@ -91,18 +99,18 @@ const SignupPage: React.FC = () => {
         />
       </div>
       <div className="main-container">
-        <h1 className="text-4xl font-bold my-8">{t.signUpButton || "Sign Up"}</h1>
+        <h1 className="text-4xl font-bold my-8">{t.signup?.signUpButton || "Sign Up"}</h1>
         <div className="login-form">
           <input
-            type="text"
-            placeholder={t.email || "Email"}
+            type="email"
+            placeholder={t.signup?.email || "Email"}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="mb-2 p-2 border rounded w-full"
           />
           <input
             type="password"
-            placeholder={t.password || "Password"}
+            placeholder={t.signup?.password || "Password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="mb-2 p-2 border rounded w-full"
@@ -111,18 +119,24 @@ const SignupPage: React.FC = () => {
             onClick={handleSignup}
             className="mt-2 bg-blue-500 text-white px-4 py-2 rounded"
           >
-            {t.signUpButton || "Sign Up"}
+            {t.signup?.signUpButton || "Sign Up"}
           </button>
-          {errorMessage && (
-            <p className="text-red-500 mt-2">{errorMessage}</p>
+          {emailError && (
+            <p className="text-red-500 mt-2">{emailError}</p>
           )}
-          {successMessage && (
-            <p className="text-green-500 mt-2">{successMessage}</p>
+          {message && (
+            <p
+              className={`text-center mt-4 ${
+                isSuccessful ? "text-green-500" : "text-red-500"
+              }`}
+            >
+              {message}
+            </p>
           )}
         </div>
         <Link href="/pages/login">
           <div className="mt-4 text-center text-blue-500 underline cursor-pointer">
-            {t.backToLoginButton || "Back to Login"}
+            {t.signup?.backToLoginButton || "Back to Login"}
           </div>
         </Link>
       </div>
@@ -130,4 +144,4 @@ const SignupPage: React.FC = () => {
   );
 };
 
-export default SignupPage;
+export default Signup;

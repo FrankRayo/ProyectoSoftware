@@ -18,14 +18,37 @@ const ClosedTestingRegistration = () => {
         (contentBody as HTMLElement).style.height = `${mainContainerHeight}px`;
       }
     };
-
+  
+    // Update height initially
     updateContentBodyHeight();
+  
+    // Observe changes to the main container
+    const mainContainer = document.querySelector(".main-container");
+    if (mainContainer) {
+      const observer = new MutationObserver(() => {
+        updateContentBodyHeight();
+      });
+  
+      observer.observe(mainContainer, {
+        attributes: true,
+        childList: true,
+        subtree: true,
+      });
+  
+      // Cleanup on unmount
+      return () => {
+        observer.disconnect();
+      };
+    }
+  
+    // Fallback to window resize listener
     window.addEventListener("resize", updateContentBodyHeight);
-
+  
     return () => {
       window.removeEventListener("resize", updateContentBodyHeight);
     };
   }, []);
+  
 
   return (
     <>

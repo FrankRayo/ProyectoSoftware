@@ -12,7 +12,7 @@ export default async function handler(
 
   // Extract language from request headers
   const language = req.headers["accept-language"] || "en";
-  const t = translations[language]?.login || translations.en.login;
+  const t = translations[language as keyof typeof translations]?.login || translations.en.login;
 
   const { email, password } = req.body;
 

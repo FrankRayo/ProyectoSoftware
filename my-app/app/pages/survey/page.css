@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.container {
+  width: 925px; /* Maximum width of the container */
+  padding: 1rem;
+  padding-top:0;
+}
+.container {
+  margin-top: 1rem; /* Add margin-top for the container */
+  max-height: 100%;
+  width: 925px; /* Maximum width of the container */
+  margin: 0 auto; /* Center the container */
+  position: relative; /* Ensure positioned elements are relative to this container */
+}
+
+.content-body {
+  position: absolute;
+  /*top: 758px;
+  left: 50%;*/
+  width: 925px;
+  min-height: 147px;
+  z-index: -1;
+  background-image: url('/assets/layout/content-body.png');
+  background-repeat: repeat-y; /* Repeat the image vertically */ /* Start repeating from the top center */
+  background-size: contain; /* Ensure the entire image is visible */
+  background-position: top center; /* Position the image at the top center */
+
+}
+
+.main-container {
+  margin-left: 30px;
+}
+
+.google-form-container {
+  margin: 0 auto;
+  padding: 20px;
+  max-height: 480px; /* Ensures the container doesn't exceed this height */
+  border-radius: 8px; /* Rounded corners for aesthetics */
+  overflow: hidden; /* Prevents any overflow content */
+}
+
+.looker-studio-container {
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+}
+
+
+
+@media (max-width: 768px) {
+  .google-form-container,
+  .looker-studio-container {
+    padding: 15px; /* Reduce padding for smaller screens */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow on smaller screens */
+  }
+
+  .google-form-container iframe,
+  .looker-studio-container iframe {
+    height: 600px; /* Adjust iframe height for smaller screens */
+  }
+}

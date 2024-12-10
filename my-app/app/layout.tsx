@@ -57,7 +57,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
                 </div>
               </div>
               <div className="dropdown">
-                <Link href="/pages/login">
+                <Link href="/pages/survey">
                   <button className="dropdown-button">{t.contactUs}</button>
                 </Link>
               </div>

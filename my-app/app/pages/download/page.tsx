@@ -22,7 +22,7 @@ const DownloadPage = () => {
       const contentBody = document.querySelector('.content-body');
       if (mainContainer && contentBody) {
         const mainContainerHeight = mainContainer.clientHeight;
-        contentBody.style.height = `${mainContainerHeight}px`;
+        (contentBody as HTMLElement).style.height = `${mainContainerHeight}px`;
       }
     };
 

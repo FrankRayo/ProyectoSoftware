@@ -69,7 +69,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
               <div className="home-click"> 
               </div>
             </Link>
-            <Link href="/pages/login">
+            <Link href="/pages/login" className="play">
               <div className="play-click"> 
               </div>
             </Link>

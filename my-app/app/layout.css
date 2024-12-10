@@ -23,6 +23,7 @@
   }
 }
 
+
 /* Body styling */
 body {
   color: var(--foreground);
@@ -162,7 +163,33 @@ body {
 .home-click, .play-click{
   width: 50%;
   height: 260px;
-  min-width: 460px;
+
+}
+.home-click{
+  min-width:460px;
+}
+.play{
+  position:relative;
+  height:100px;
+}
+.play-click{
+  height: 78px;
+  width: 346px;
+  left: 60px;
+  bottom: -154px;
+  background-image: url('/assets/layout/play-button.png');
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  position:absolute;
+}
+
+.play-click:hover{
+  background-position-y:center;
+}
+
+.play-click:focus, .play-click:active{
+  background-position-y:bottom;
 }
 /* Utility classes */
 @layer utilities {

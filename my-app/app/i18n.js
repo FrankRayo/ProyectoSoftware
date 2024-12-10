@@ -10,6 +10,7 @@ const translations = {
       fieldsRequired: "Email and password are required.",
       invalidCredentials: "Invalid credentials.",
       loginSuccess: "Login successful.",
+      backToSignup: "Back to Signup",
     },
     signup: {
       email: "Email",
@@ -34,6 +35,27 @@ const translations = {
     theGame: "THE GAME",
     about: "ABOUT",
     faq: "FAQ",
+    faqPage: {
+      title: "Frequently Asked Questions",
+      questions: [
+        {
+          question: "What is CWAEmu?",
+          answer: "CWAEmu is a sample website built with Next.js and Tailwind CSS for testing purposes.",
+        },
+        {
+          question: "How do I use this site?",
+          answer: "You can navigate through the site using the menu options and explore the different sections.",
+        },
+        {
+          question: "Who developed this site?",
+          answer: "This site was developed by a team of developers using modern web technologies.",
+        },
+        {
+          question: "What is Clone Wars Adventures?",
+          answer: "Clone Wars Adventures was an online virtual world based on the animated television series Star Wars: The Clone Wars. It was developed by Sony Online Entertainment and was released in 2010.",
+        },
+      ],
+    },
     socialMedia: "SOCIAL MEDIA",
     updates: "UPDATES",
     news: "NEWS",
@@ -78,6 +100,7 @@ const translations = {
       fieldsRequired: "Se requieren correo electrónico y contraseña.",
       invalidCredentials: "Credenciales no válidas.",
       loginSuccess: "Inicio de sesión exitoso.",
+      backToSignup: "Volver a Registrarse",
     },
     signup: {
       email: "Correo Electrónico",
@@ -95,6 +118,9 @@ const translations = {
     latestNews: "ÚLTIMAS NOTICIAS",
     roadmap: "HOJA DE RUTA",
     view: "VER",
+    builtWith: "Construido con",
+    nextjs: "Next.js",
+    tailwind: "Tailwind CSS",
     privacyPolicy: "Política de Privacidad",
     termsOfService: "Términos de Servicio",
     press: "Prensa",
@@ -102,6 +128,27 @@ const translations = {
     theGame: "EL JUEGO",
     about: "ACERCA DE",
     faq: "PREGUNTAS FRECUENTES",
+    faqPage: {
+      title: "Preguntas Frecuentes",
+      questions: [
+        {
+          question: "¿Qué es CWAEmu?",
+          answer: "CWAEmu es un sitio web de muestra construido con Next.js y Tailwind CSS para fines de prueba.",
+        },
+        {
+          question: "¿Cómo uso este sitio?",
+          answer: "Puedes navegar por el sitio usando las opciones del menú y explorar las diferentes secciones.",
+        },
+        {
+          question: "¿Quién desarrolló este sitio?",
+          answer: "Este sitio fue desarrollado por un equipo de desarrolladores utilizando tecnologías web modernas.",
+        },
+        {
+          question: "¿Qué es Clone Wars Adventures?",
+          answer: "Clone Wars Adventures fue un mundo virtual en línea basado en la serie de televisión animada Star Wars: The Clone Wars. Fue desarrollado por Sony Online Entertainment y fue lanzado en 2010.",
+        },
+      ],
+    },
     socialMedia: "REDES SOCIALES",
     updates: "ACTUALIZACIONES",
     news: "NOTICIAS",

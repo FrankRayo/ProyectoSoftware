@@ -13,7 +13,7 @@ const LoginPage = () => {
   const [errorMessage, setErrorMessage] = useState(""); // State to show error messages
   const router = useRouter(); // Hook for redirection
   const { language } = useLanguage(); // Get the current language
-  const t = translations[language]; // Get translations for the current language
+  const t = translations[language as keyof typeof translations]; // Get translations for the current language
   
   const handleLogin = async () => {
     try {
@@ -29,7 +29,7 @@ const LoginPage = () => {
       const result = await response.json();
   
       if (!response.ok) {
-        setErrorMessage(result.message || t.login?.loginFailed || "Invalid username or password");
+        setErrorMessage(result.message || t.login?.errorMessage || "Invalid username or password");
         return;
       }
   

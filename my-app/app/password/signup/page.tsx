@@ -15,12 +15,12 @@ const Signup: React.FC = () => {
   const [emailError, setEmailError] = useState("");
   const router = useRouter();
   const { language } = useLanguage(); // Get the current language
-  const t = translations[language]; // Get translations for the current language
+  const t = translations[language].signup; // Get translations for the signup section
 
   const handleSignup = async () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      setEmailError(t.signup?.invalidEmail || "Invalid email format");
+      setEmailError(t.invalidEmail || "Invalid email format");
       return;
     } else {
       setEmailError("");
@@ -38,15 +38,15 @@ const Signup: React.FC = () => {
 
       if (res.status === 201) {
         setIsSuccessful(true);
-        setMessage(t.signup?.signupSuccess || "Signup successful! Redirecting...");
+        setMessage(t.signupSuccess || "Signup successful! Redirecting...");
         setTimeout(() => router.push("/pages/login"), 2000); // Redirect to login page
       } else {
         setIsSuccessful(false);
-        setMessage(t.signup?.signupFailed || "Signup failed. Please try again.");
+        setMessage(t.signupFailed || "Signup failed. Please try again.");
       }
     } catch (error) {
       console.error("Error during signup:", error);
-      setMessage(t.signup?.errorMessage || "Something went wrong. Please try again later.");
+      setMessage(t.errorMessage || "Something went wrong. Please try again later.");
       setIsSuccessful(false);
     }
   };
@@ -78,18 +78,18 @@ const Signup: React.FC = () => {
         />
       </div>
       <div className="main-container">
-        <h1 className="text-4xl font-bold my-8">{t.signup?.signUpButton || "Sign Up"}</h1>
+        <h1 className="text-4xl font-bold my-8">{t.signUpButton || "Sign Up"}</h1>
         <div className="login-form">
           <input
             type="email"
-            placeholder={t.signup?.email || "Email"}
+            placeholder={t.email || "Email"}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="mb-2 p-2 border rounded w-full"
           />
           <input
             type="password"
-            placeholder={t.signup?.password || "Password"}
+            placeholder={t.password || "Password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="mb-2 p-2 border rounded w-full"
@@ -98,7 +98,7 @@ const Signup: React.FC = () => {
             onClick={handleSignup}
             className="mt-2 bg-blue-500 text-white px-4 py-2 rounded"
           >
-            {t.signup?.signUpButton || "Sign Up"}
+            {t.signUpButton || "Sign Up"}
           </button>
           {emailError && (
             <p className="text-red-500 mt-2">{emailError}</p>
@@ -115,7 +115,7 @@ const Signup: React.FC = () => {
         </div>
         <Link href="/pages/login">
           <div className="mt-4 text-center text-blue-500 underline cursor-pointer">
-            {t.signup?.backToLoginButton || "Back to Login"}
+            {t.backToLoginButton || "Back to Login"}
           </div>
         </Link>
       </div>

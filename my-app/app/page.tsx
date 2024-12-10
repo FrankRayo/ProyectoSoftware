@@ -64,21 +64,44 @@ useEffect(() => {
 }, [currentSlide]);
 useEffect(() => {
   const updateContentBodyHeight = () => {
-    const mainContainer = document.querySelector('.main-container');
-    const contentBody = document.querySelector('.content-body');
+    const mainContainer = document.querySelector(".main-container");
+    const contentBody = document.querySelector(".content-body");
     if (mainContainer && contentBody) {
       const mainContainerHeight = mainContainer.clientHeight;
       (contentBody as HTMLElement).style.height = `${mainContainerHeight}px`;
     }
   };
 
+  // Update height initially
   updateContentBodyHeight();
-  window.addEventListener('resize', updateContentBodyHeight);
+
+  // Observe changes to the main container
+  const mainContainer = document.querySelector(".main-container");
+  if (mainContainer) {
+    const observer = new MutationObserver(() => {
+      updateContentBodyHeight();
+    });
+
+    observer.observe(mainContainer, {
+      attributes: true,
+      childList: true,
+      subtree: true,
+    });
+
+    // Cleanup on unmount
+    return () => {
+      observer.disconnect();
+    };
+  }
+
+  // Fallback to window resize listener
+  window.addEventListener("resize", updateContentBodyHeight);
 
   return () => {
-    window.removeEventListener('resize', updateContentBodyHeight);
+    window.removeEventListener("resize", updateContentBodyHeight);
   };
 }, []);
+
 return (
   <>
     <div className="content-body">
@@ -87,7 +110,7 @@ return (
               className="content-body-img"
             />
     </div>
-  <div className="main-container" style={{ paddingTop: '2rem' }}>
+  <div className="main-container" style={{ paddingTop: '1rem' }}>
     <div className="inner-slider" style={{ backgroundImage: 'url(/assets/homepage/Rotator/RotatorFrame2.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center', height: '500px', width: '825px', marginLeft: '50px' }}>
       <div className="slider-content" style={{ padding: '0px' }}>
         <div className="rotator" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>

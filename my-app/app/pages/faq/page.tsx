@@ -8,7 +8,7 @@ import { useEffect } from "react";
 
 const FAQ = () => {
   const { language } = useLanguage();
-  const t = translations[language].faqPage;
+  const t = translations[language as keyof typeof translations].faqPage;
 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -17,21 +17,44 @@ const FAQ = () => {
   };
   useEffect(() => {
     const updateContentBodyHeight = () => {
-      const mainContainer = document.querySelector('.main-container');
-      const contentBody = document.querySelector('.content-body');
+      const mainContainer = document.querySelector(".main-container");
+      const contentBody = document.querySelector(".content-body");
       if (mainContainer && contentBody) {
         const mainContainerHeight = mainContainer.clientHeight;
-        contentBody.style.height = `${mainContainerHeight}px`;
+        (contentBody as HTMLElement).style.height = `${mainContainerHeight}px`;
       }
     };
-
+  
+    // Update height initially
     updateContentBodyHeight();
-    window.addEventListener('resize', updateContentBodyHeight);
-
+  
+    // Observe changes to the main container
+    const mainContainer = document.querySelector(".main-container");
+    if (mainContainer) {
+      const observer = new MutationObserver(() => {
+        updateContentBodyHeight();
+      });
+  
+      observer.observe(mainContainer, {
+        attributes: true,
+        childList: true,
+        subtree: true,
+      });
+  
+      // Cleanup on unmount
+      return () => {
+        observer.disconnect();
+      };
+    }
+  
+    // Fallback to window resize listener
+    window.addEventListener("resize", updateContentBodyHeight);
+  
     return () => {
-      window.removeEventListener('resize', updateContentBodyHeight);
+      window.removeEventListener("resize", updateContentBodyHeight);
     };
   }, []);
+  
   return (
   <>
     <div className="content-body">

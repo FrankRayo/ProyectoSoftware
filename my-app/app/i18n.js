@@ -63,9 +63,9 @@ const translations = {
     contactUs: "CONTACT US",
     aboutPage: {
       title: "About CWAEmu",
-      about1: "CWAEmu is a non-profit, fan revival of SOE's Clone Wars Adventures Online...",
-      about2: "Jam-packed with activities...",
-      about3: "As CWAEMU is an online experience...",
+      about1: "CWAEmu is a non-profit, fan revival of SOE's Clone Wars Adventures Online. Players will dive into a 100% free-to-play, action-packed virtual world where they can live out the thrills and excitement of Star Wars: The Clone Wars first-hand!",
+      about2: "Jam-packed with activities, players will battle it out alongside the familiar faces of Anakin Skywalker, Obi-Wan Kenobi, Yoda, and Ahsoka Tano. Expect fun minigames, daily activities, events, rewards, lively social environments, an in-depth housing system, and friendly competition.",
+      about3: "As CWAEMU is an online experience, we are determined to provide a safe and rewarding environment with your children in mind.",
     },
     closedTestingPage: {
       title: "CLOSED TESTING REGISTRATION NOW OPEN!",
@@ -95,7 +95,7 @@ const translations = {
     login: {
       username: "Correo Electrónico",
       password: "Contraseña",
-      enter: "Entrar",
+      enter: "Ingresar",
       errorMessage: "Usuario o contraseña incorrectos. Inténtelo de nuevo.",
       fieldsRequired: "Se requieren correo electrónico y contraseña.",
       invalidCredentials: "Credenciales no válidas.",
@@ -156,9 +156,9 @@ const translations = {
     contactUs: "CONTÁCTANOS",
     aboutPage: {
       title: "Acerca de CWAEmu",
-      about1: "CWAEmu es un proyecto sin fines de lucro...",
-      about2: "Repleto de actividades...",
-      about3: "Dado que CWAEMU es una experiencia en línea...",
+      about1: "CWAEmu es un proyecto sin fines de lucro que revive el juego Clone Wars Adventures Online de SOE. ¡Los jugadores se sumergirán en un mundo virtual lleno de acción, 100% gratuito, donde podrán vivir las emociones y la emoción de Star Wars: The Clone Wars en primera persona!",
+      about2: "Repleto de actividades, los jugadores lucharán junto a rostros familiares como Anakin Skywalker, Obi-Wan Kenobi, Yoda y Ahsoka Tano. Esperen divertidos minijuegos, actividades diarias, eventos, recompensas, entornos sociales vibrantes, un sistema de vivienda detallado y una competencia amistosa.",
+      about3: "Dado que CWAEMU es una experiencia en línea, estamos comprometidos a proporcionar un entorno seguro y gratificante pensando en sus hijos.",
     },
     closedTestingPage: {
       title: "¡EL REGISTRO PARA PRUEBAS CERRADAS ESTÁ ABIERTO!",

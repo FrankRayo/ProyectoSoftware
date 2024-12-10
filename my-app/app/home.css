@@ -199,6 +199,25 @@ button:hover {
   .newsbox, .purplebox {
     max-width: 98%; /* Reduce the width of the boxes */
   }
+  .newsarticle .title {
+    font-size: 2.25rem;
+    font-weight: bold;
+  }
+  
+  .newsarticle .news {
+    margin-top: 0.5rem;
+    font-size: 2rem;
+  }
+  
+  .newsarticle .readpost {
+    margin-top: 0.5rem;
+    font-size: 2rem;
+}
+  .header {
+    font-size: 1.75rem;
+    font-weight: bold;
+    text-align: center;
+ }
 }
 
 @media (max-width: 768px) {
@@ -208,4 +227,23 @@ button:hover {
   .newsbox, .purplebox {
     max-width: 98%; /* Reduce the width of the boxes */
   }
+  .newsarticle .title {
+    font-size: 2.25rem;
+    font-weight: bold;
+  }
+  
+  .newsarticle .news {
+    margin-top: 0.5rem;
+    font-size: 2rem;
+  }
+  
+  .newsarticle .readpost {
+    margin-top: 0.5rem;
+    font-size: 2rem;
+}
+  .header {
+    font-size: 1.75rem;
+    font-weight: bold;
+    text-align: center;
+ }
 }

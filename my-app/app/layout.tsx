@@ -14,7 +14,7 @@ const cloneWarsFont = localFont({
 
 function LayoutContent({ children }: { children: React.ReactNode }) {
   const { language, toggleLanguage } = useLanguage();
-  const t = translations[language];
+  const t = translations[language as keyof typeof translations];
 
   return (
     <html lang={language}>

@@ -7,7 +7,7 @@ import { useLanguage } from "../../../LanguageContext";
 
 const ClosedTestingRegistration = () => {
   const { language } = useLanguage();
-  const t = translations[language].closedTestingPage; // Assuming `closedTestingPage` exists in translations
+  const t = translations[language as keyof typeof translations].closedTestingPage; // Assuming `closedTestingPage` exists in translations
 
   useEffect(() => {
     const updateContentBodyHeight = () => {

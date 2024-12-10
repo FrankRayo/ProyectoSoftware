@@ -15,7 +15,7 @@ const Signup: React.FC = () => {
   const [emailError, setEmailError] = useState("");
   const router = useRouter();
   const { language } = useLanguage(); // Get the current language
-  const t = translations[language].signup; // Get translations for the signup section
+  const t = translations[language as keyof typeof translations].signup; // Get translations for the signup section
 
   const handleSignup = async () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

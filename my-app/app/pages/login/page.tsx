@@ -14,29 +14,32 @@ const LoginPage = () => {
   const router = useRouter(); // Hook for redirection
   const { language } = useLanguage(); // Get the current language
   const t = translations[language]; // Get translations for the current language
-
+  
   const handleLogin = async () => {
     try {
       const response = await fetch("/api/auth/password/login", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Accept-Language": language, // Send the current language
+        },
         body: JSON.stringify({ email: username, password }),
       });
-
+  
       const result = await response.json();
-
+  
       if (!response.ok) {
         setErrorMessage(result.message || t.login?.loginFailed || "Invalid username or password");
         return;
       }
-
+  
       // Store the token or flag in localStorage
       if (result.token) {
         localStorage.setItem("authToken", result.token); // Store the token returned by the API
       } else {
         localStorage.setItem("authToken", "user_authenticated"); // Placeholder if no token is returned
       }
-
+  
       // Redirect on successful login
       router.push("/pages/download");
     } catch (error) {
@@ -44,6 +47,7 @@ const LoginPage = () => {
       setErrorMessage(t.login?.errorMessage || "Something went wrong. Please try again later.");
     }
   };
+  
 
   useEffect(() => {
     const updateContentBodyHeight = () => {

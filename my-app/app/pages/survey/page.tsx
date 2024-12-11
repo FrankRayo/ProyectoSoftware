@@ -54,7 +54,7 @@ const DownloadPage = () => {
         />
       </div>
       <div className="main-container">
-        <h1 className="text-4xl font-bold mb-6 text-center">Player Survey</h1>
+        <h1 className="text-4xl font-bold text-center" style={{ paddingTop: '15px' }}>Player Survey</h1>
         
         {/* Embed Google Form */}
         <div className="google-form-container mx-auto" style={{ width: '100%', maxWidth: '800px', maxHeight: '480px' }}>

@@ -29,3 +29,98 @@
     margin-left: 35px;
     margin-right:5px;
   }
+
+  .page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e3b51d;
+    margin-bottom: 16px;
+  }
+  
+  .greeting,
+  .introduction,
+  .overview {
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
+  
+  .section-description,
+  .section-details {
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+  
+  .closing {
+    font-size: 1rem;
+    padding-bottom: 16px;
+  }
+  /* List Styles */
+  .points-list {
+    list-style-type: disc;
+    margin-left: 16px;
+  }
+  
+  .point-item {
+    margin-bottom: 8px;
+    font-size: 1rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 2.5rem;
+    }
+  
+    .greeting,
+    .introduction,
+    .overview,
+    .section-description,
+    .section-details,
+    .closing {
+      font-size: 1.25rem;
+    }
+  
+    .section-title {
+      font-size: 1.75rem;
+    }
+  
+    .point-item {
+      font-size: 1.25rem;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .main-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+  
+    .page-title {
+      font-size: 3rem;
+    }
+  
+    .greeting,
+    .introduction,
+    .overview,
+    .section-description,
+    .section-details,
+    .closing {
+      font-size: 1.5rem;
+    }
+  
+    .section-title {
+      font-size: 2rem;
+    }
+  
+    .point-item {
+      font-size: 1.5rem;
+    }
+  }
